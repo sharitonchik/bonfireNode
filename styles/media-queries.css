@@ -1,0 +1,75 @@
+@media screen and (max-width: 768px) {
+	.row{
+		padding:5px;
+	}
+	.nav-extra-item {
+		position: relative;
+		text-align: center;
+		float:none;
+		margin: 2px 0;
+	}
+
+
+	
+	.nav-main-item {
+		float: none;
+		position: relative;
+		text-align: center;
+		margin: 2px 0;
+	}
+	.nav-add-item {
+		float: none;
+		position: relative;
+		text-align: center;
+		margin: 2px 0;
+	}
+}
+
+@media screen and (min-width: 768px) {
+	.row{
+		padding:10px;
+	}
+	.nav-extra-item {
+		position: relative;
+		text-align: center;
+		float:none;
+		margin: 2px 0;
+
+	}
+	
+	
+}
+
+@media (min-width: 992px) {
+	.row{
+		padding:0 10px;
+	}
+	.carousel {
+		padding:0;
+	}
+	.blog-wrap {
+		padding: 10px 0;
+	}
+	
+	.nav-extra-item {
+		position: relative;
+		float:right;
+		margin: 2px 0;
+	}
+}
+
+@media screen and (min-width: 1200px) {
+	.row{
+		padding:0 100px;
+	}
+	
+	.nav-extra-item {
+		position: relative;
+		float:right;
+		margin: 2px 0;
+	}
+    .row-popup {
+        padding:0;
+    }
+	
+}
