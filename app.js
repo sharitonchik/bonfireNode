@@ -40,5 +40,5 @@ app.get('/phone', getPageRelatedPath);
 
 
 http.createServer(app).listen(8081, function () {
-    console.log('Working');
+    console.log('Working http://localhost:8081/');
 });
