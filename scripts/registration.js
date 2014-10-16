@@ -113,3 +113,7 @@ function checkAll(){
         document.getElementById('submit_id').disabled = true;
     }
 }
+
+function hello(){
+    alert('hellow world');
+}
