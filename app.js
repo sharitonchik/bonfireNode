@@ -37,6 +37,8 @@ app.get('/styles/*', fileSend);
 
 app.get('/getProducts', getProductsDb);
 app.get('/phone', getPageRelatedPath);
+app.get('/login', getPageRelatedPath);
+app.get('/registration', getPageRelatedPath);
 
 
 http.createServer(app).listen(8081, function () {
