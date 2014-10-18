@@ -18,6 +18,11 @@
 <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
 <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
 
+<script>
+
+
+</script>
+
 <section class="container-fluid">
     <header class="header">
 
@@ -119,9 +124,13 @@
         <div class="row">
             <!-- Button trigger modal -->
             <button class="button btn-sign" data-toggle="modal" data-target="#myModal">
-                Add product
+                Add phone
             </button>
             <!-- Modal -->
+            <div class="addPhone-form-container">
+                <form id="addPhone-form" onsubmit="">
+                </form>
+            </div>
             <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel"
                  aria-hidden="true">
                 <div class="modal-dialog">
@@ -133,74 +142,74 @@
                         </div>
                         <div class="modal-body">
                             <div class="row row-popup">
+                                <!--itemTitle-->
                                 <div class="registr-item clearfix">
-                                    <label for="product_name" class="col-lg-5 registr-label">Name of product</label>
-
+                                    <label for="itemTitle" class="col-lg-5 registr-label">Title</label>
                                     <div class="col-lg-6 col-md-5 col-sm-5 col-xs-5">
-                                        <input type="text" class="input-common" id="product_name" value=""
-                                               placeholder="Enter name of product" autofocus required>
+                                        <input type="text" class="input-common" id="itemTitle" value=""
+                                               placeholder="title" autofocus required>
                                     </div>
                                 </div>
                             </div>
                             <div class="row row-popup">
+                                <!--itemThumbImgUrl-->
                                 <div class="registr-item clearfix">
-                                    <label for="product_price" class="col-lg-5 registr-label">Price of product</label>
-
+                                    <label for="itemThumbImgUrl" class="col-lg-5 registr-label">Image Url</label>
                                     <div class="col-lg-6 col-md-5 col-sm-5 col-xs-5">
-                                        <input type="text" class="input-common" id="product_price" value=""
-                                               placeholder="Enter price of product" required>
+                                        <input type="text" class="input-common" id="itemThumbImgUrl" value=""
+                                               placeholder="image Url" required>
                                     </div>
                                 </div>
                             </div>
                             <div class="row row-popup">
+                                <!--shortDescr-->
                                 <div class="registr-item clearfix">
-                                    <label for="product_price" class="col-lg-5 registr-label">Category of
-                                        product</label>
-
+                                    <label for="shortDescr" class="col-lg-5 registr-label">Short description</label>
                                     <div class="col-lg-6 col-md-5 col-sm-5 col-xs-5">
-                                        <input type="text" class="input-common" id="product_category" value=""
-                                               placeholder="Enter price of product" required>
+                                        <input type="text" class="input-common" id="shortDescr" value=""
+                                               placeholder="short description" required>
                                     </div>
                                 </div>
                             </div>
                             <div class="row row-popup">
+                                <!--price-->
                                 <div class="registr-item clearfix">
-                                    <label for="product_memory" class="col-lg-5 registr-label">Memory of product</label>
-
+                                    <label for="price" class="col-lg-5 registr-label">Price</label>
                                     <div class="col-lg-6 col-md-5 col-sm-5 col-xs-5">
-                                        <input type="text" class="input-common" id="product_memory" value=""
-                                               placeholder="Enter memory of product" required>
+                                        <input type="text" class="input-common" id="price" value=""
+                                               placeholder="price" required>
                                     </div>
                                 </div>
                             </div>
                             <div class="row row-popup">
+                                <!--birthday-->
                                 <div class="registr-item clearfix">
-                                    <label for="product_descr" class="col-lg-5 registr-label">Description of
-                                        product</label>
-
+                                    <label for="birthday" class="col-lg-5 registr-label">Production date</label>
                                     <div class="col-lg-6 col-md-5 col-sm-5 col-xs-5">
-                                        <input type="text" class="input-common" id="product_descr" value=""
-                                               placeholder="Enter description of product" required>
+                                        <input type="text" class="input-common" id="birthday" value=""
+                                               placeholder="birthday" required>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="row row-popup">
+                                <!--band-->
+                                <div class="registr-item clearfix">
+                                    <label for="band" class="col-lg-5 registr-label">Band</label>
+                                    <div class="col-lg-6 col-md-5 col-sm-5 col-xs-5">
+                                        <input type="text" class="input-common" id="band" value="" placeholder="band" required>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="row row-popup">
+                                <!--mobile_type-->
+                                <div class="checkbox-item">
+                                    <label for="mobile_type" class="col-lg-5 registr-label">Type</label>
+                                    <div class="col-lg-6 col-md-5 col-sm-5 col-xs-5">
+                                        <input type="text" class="input-common" id="mobile_type" value="" placeholder="mobile type" >
                                     </div>
                                 </div>
                             </div>
                             <!--<div class="row row-popup">
-                                <div class="registr-item clearfix">
-                                    <label for="product_sim" class="col-lg-5 registr-label">Amount of sim</label>
-                                    <div class="col-lg-6 col-md-5 col-sm-5 col-xs-5">
-                                        <input type="text" class="input-common" id="product_sim" value="" placeholder="Enter sim's count of product" required>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="row row-popup">
-                                <div class="checkbox-item">
-                                    <label for="product_ts" class="col-lg-5 checkbox-label">Touchscreen</label>
-                                    <div class="col-lg-6 col-md-5 col-sm-5 col-xs-5">
-                                        <input type="checkbox" id="product_ts" value="">
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="row row-popup">
                                 <div class="checkbox-item">
                                     <label for="product_ts" class="col-lg-5 checkbox-label">Flashlight</label>
                                     <div class="col-lg-6 col-md-5 col-sm-5 col-xs-5">
@@ -219,7 +228,7 @@
                         </div>
                         <div class="modal-footer">
                             <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
-                            <button type="submit" class="btn btn-primary" onclick="saveChanges()" data-dismiss="modal">
+                            <button type="submit" class="btn btn-primary" onclick="saveChanges()">
                                 Save changes
                             </button>
                         </div>

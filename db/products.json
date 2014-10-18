@@ -1,22 +1,33 @@
-{
-    "glossary": {
-        "title": "example glossary",
-        "GlossDiv": {
-            "title": "S",
-            "GlossList": {
-                "GlossEntry": {
-                    "ID": "SGML",
-                    "SortAs": "SGML",
-                    "GlossTerm": "Standard Generalized Markup Language",
-                    "Acronym": "SGML",
-                    "Abbrev": "ISO 8879:1986",
-                    "GlossDef": {
-                        "para": "A meta-markup language, used to create markup languages such as DocBook.",
-                        "GlossSeeAlso": ["GML", "XML"]
-                    },
-                    "GlossSee": "markup"
-                }
+[{
+    "itemTitle":"AppleiPhone5s(16GB)",
+    "itemThumbImgUrl":"http://goo.gl/Savc8d",
+    "shortDescr":"AppleiOS,экран 4\"IPS,процессор 1300МГц (2ядр.),аккумулятор 1560мАч",
+    "rating":4.5,
+    "price":{
+        "max":"3200",
+        "min":"790"
+    },
+    "techInfo":{
+        "thumbs":[
+            {
+                "thumbURL":"http://goo.gl/0HfwQG",
+                "fullSizeURL":"http://goo.gl/wzOUwp"
             }
+
+        ],
+        "birthday":{
+            "title":"Production date",
+            "value":"2013"
+        },
+        "band":{
+            "title":"Standard connection",
+            "value":"GSM(2G),EDGE(2.9G),HSPA+(3.75G),LTE(4G)"
+        },
+        "mobile_type":{
+            "title":"Type",
+            "value":"smartphone"
         }
+
     }
 }
+]

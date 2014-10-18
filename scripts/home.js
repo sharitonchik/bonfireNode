@@ -1,26 +1,28 @@
 
-function Product(productName,productPrice,productCategory,productMemory,productDescr){
-    this.productName = productName;
-    this.productPrice = productPrice;
-    this.productCategory = productCategory;
-    this.productMemory = productMemory;
-    this.productDescr = productDescr;
-
+function Product(itemTitle,itemThumbImgUrl,shortDescr,price,birthday,band,mobile_type){
+    this.itemTitle = itemTitle;
+    this.itemThumbImgUrl = itemThumbImgUrl;
+    this.shortDescr = shortDescr;
+    this.price = price;
+    this.birthday = birthday;
+    this.band = band;
+    this.mobile_type = mobile_type;
 
 }
 
 
 function saveChanges(){
-    //var modal = document.getElementById('myModal');
-    var productName = document.getElementById('product_name').value;
-    var productPrice = document.getElementById('product_price').value;
-    var productCategory = document.getElementById('product_category').value;
-    var productMemory = document.getElementById('product_memory').value;
-    var productDescr = document.getElementById('product_descr').value;
-
-    var newProduct = new Product(productName,productPrice,productCategory,productMemory,productDescr);
+    var itemTitle = document.getElementById('itemTitle').value;
+    var itemThumbImgUrl = document.getElementById('itemThumbImgUrl').value;
+    var shortDescr = document.getElementById('shortDescr').value;
+    var price = document.getElementById('price').value;
+    var birthday = document.getElementById('birthday').value;
+    var band = document.getElementById('band').value;
+    var mobile_type = document.getElementById('mobile_type').value;
+    var newProduct = new Product(itemTitle,itemThumbImgUrl,shortDescr,price,birthday,band,mobile_type);
 
     testJson.push(newProduct);
+
     displayAddedProduct(newProduct);
 
     return window.testJson; //window.testJson

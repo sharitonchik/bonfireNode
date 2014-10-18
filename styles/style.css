@@ -474,7 +474,7 @@ h4, h5, h6,p,ul,li,h2,h3{
 
 .widgets-list-item{
     display:inline-block;
-    padding:0 5px;
+    padding:5px;
     width: 33%;
     vertical-align: top;
 }
@@ -1320,4 +1320,13 @@ h4, h5, h6,p,ul,li,h2,h3{
 .pr-options-wrap{
     width: 45%;
     padding: 20px 0;
+}
+
+.form-container{
+    display: none;
+
+}
+.widgets-list-item-inner{
+    border-right: 1px solid #cccccc;
+
 }

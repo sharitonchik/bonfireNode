@@ -1,8 +1,5 @@
-var testJson = window.testJson
 
 var list = document.getElementById('list_id');
-
-document.addEventListener('DOMContentLoaded',displayPhoneProduct,false);
 
 document.getElementById('find').addEventListener('click',sort,false);
 
@@ -71,12 +68,7 @@ function displayAddedProduct(newProduct){
             nameDiv.insertBefore(prImage,prName);
 
         }
-        else if (key=='name'){
-            var prName = document.createElement('a');
-            prName.className = 'links-main';
-            prName.innerHTML = newProduct[key];
-            nameDiv.appendChild(prName);
-        }
+
         else if (key=='description'){
             var prDescr = document.createElement('p');
             prDescr.className ='p-main';
@@ -134,4 +126,62 @@ function sort(event){
 
 }
 
+document.addEventListener('DOMContentLoaded',phoneItemShow,false);
 
+function phoneItemShow(elem) {
+    var xhr = new XMLHttpRequest();
+    xhr.open('GET','/getProducts',true);
+    xhr.onreadystatechange = function(){
+        if (xhr.readyState !=4) return;
+        var event = JSON.parse(xhr.responseText);
+        for (var i=0;i<event.length;i++){
+            var newItem = document.createElement('li'); //create li
+            newItem.className = 'widgets-list-item'; // assign class
+            list.appendChild(newItem); //move li under ul
+            var nameDiv = document.createElement('div'); // crete div1
+            nameDiv.className = 'widgets-list-item-inner';
+            newItem.appendChild(nameDiv);
+            var item = event[i];
+            for (var key in item){
+                if (key == 'itemThumbImgUrl'){
+                    var prImage = document.createElement('img');
+                    prImage.className = 'phone-image';
+                    prImage.setAttribute("src",item[key]);
+                    nameDiv.insertBefore(prImage,prName);
+                }
+
+                if (key == 'itemTitle'){
+                    var prName = document.createElement('a');
+                    prName.className = 'links-main';
+                    prName.innerHTML = item[key];
+                    nameDiv.appendChild(prName);
+                }
+
+                if (key == 'shortDescr'){
+                    var prDescr = document.createElement('p');
+                    prDescr.className = 'p-main';
+                    prDescr.innerHTML = item[key];
+                    nameDiv.appendChild(prDescr);
+                }
+
+                if (key == 'price'){
+                    var newPrice = item[key];
+                    for (var key1 in newPrice){
+                        var prPrice = document.createElement('h4');
+                        prPrice.className = 'header-main';
+                        prPrice.innerHTML = newPrice[key1];
+                        nameDiv.insertBefore(prPrice,prDescr);
+
+                    }
+
+                }
+
+
+
+            }
+        }
+
+    }
+
+    xhr.send(null);
+}
