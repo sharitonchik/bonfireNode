@@ -3,6 +3,8 @@
  */
 
 var http = require('http');
+var url = require('url');
+var fs = require('fs');
 var express = require('express');
 var app = express();
 
@@ -39,6 +41,27 @@ app.get('/getProducts', getProductsDb);
 app.get('/phone', getPageRelatedPath);
 app.get('/login', getPageRelatedPath);
 app.get('/registration', getPageRelatedPath);
+
+app.get('/addProduct', function(req, resp){
+    var db = fs.readFileSync('db/products.json', {
+        encoding: 'utf8'
+    });
+    db = JSON.parse(db);
+
+    var params = url.parse(req.url,true).query;
+    console.log('req.params', params);
+
+    db.push(params);
+    fs.writeFile('db/products.json', JSON.stringify(db, null, 4), function (err) {
+        if (err) {
+            console.log('err add', err);
+        } else {
+            console.log('Product saved');
+        }
+    });
+
+    resp.end();
+});
 
 
 http.createServer(app).listen(8081, function () {
