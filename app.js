@@ -59,7 +59,7 @@ app.get('/addProduct', function(req, resp){
             console.log('Product saved');
         }
     });
-
+    resp.send(params);
     resp.end();
 });
 
