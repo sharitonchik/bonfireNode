@@ -12,27 +12,42 @@ function Phone(itemTitle,itemThumbImgUrl,shortDescr,price,birthday,band,mobile_t
 
 function saveChanges(){
 
+    var itemTitleValue = document.getElementById('itemTitle').value;
+    var itemTitleName = document.getElementById('itemTitle').name;
+
+    var itemThumbImgUrlValue = document.getElementById('itemThumbImgUrl').value;
+    var itemThumbImgUrlName = document.getElementById('itemThumbImgUrl').name;
+
+    var shortDescrValue = document.getElementById('shortDescr').value;
+    var shortDescrName = document.getElementById('shortDescr').name;
+
+    var priceValue = document.getElementById('price').value;
+    var priceName = document.getElementById('price').name;
+
+    var birthdayValue = document.getElementById('birthday').value;
+    var birthdayName = document.getElementById('birthday').name;
+
+    var bandValue = document.getElementById('band').value;
+    var bandName = document.getElementById('band').name;
+
+    var mobileTypeValue = document.getElementById('mobile_type').value;
+    var mobileTypeName = document.getElementById('mobile_type').name;
+
+    //var newPhone = new Phone(itemTitle,itemThumbImgUrl,shortDescr,price,birthday,band,mobile_type);
+    var params = 'itemTitle=' + encodeURIComponent(itemTitleValue) + '&itemThumbImgUrl=' + encodeURIComponent(itemThumbImgUrlValue)
+        + '&shortDescr=' + encodeURIComponent(shortDescrValue) + '&price=' + encodeURIComponent(priceValue) +
+        '&birthday=' + encodeURIComponent(birthdayValue) + '&band=' + encodeURIComponent(bandName) +
+        '&mobileType=' + encodeURIComponent(mobileTypeValue);
+
     var xhr = new XMLHttpRequest();
-    xhr.open('GET','/getProducts',true);
+    xhr.open('GET','/addProduct?' + params,true);
     xhr.onreadystatechange = function() {
         if (xhr.readyState != 4) return;
-        var event = JSON.parse(xhr.responseText);
+        alert(xhr.responseText);
 
-        var itemTitle = document.getElementById('itemTitle').value;
-        var itemThumbImgUrl = document.getElementById('itemThumbImgUrl').value;
-        var shortDescr = document.getElementById('shortDescr').value;
-        var price = document.getElementById('price').value;
-        var birthday = document.getElementById('birthday').value;
-        var band = document.getElementById('band').value;
-        var mobile_type = document.getElementById('mobile_type').value;
-
-        var newPhone = new Phone(itemTitle,itemThumbImgUrl,shortDescr,price,birthday,band,mobile_type);
-
-        event.push(newPhone);
-
-        phoneItemShow();
     }
     xhr.send(null);
+
 }
 
 
@@ -58,7 +73,7 @@ function showPrompt() {
     }
 
     form.onsubmit = function() {
-        alert('Hi');
+        saveChanges();
     };
 
     form.elements.cancel.onclick = function() {
@@ -66,7 +81,7 @@ function showPrompt() {
     };
 
     container.style.display = 'block';
-    form.elements.text.focus();
+
 }
 
 document.getElementById('show-button').onclick = function() {

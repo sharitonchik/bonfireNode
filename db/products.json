@@ -1,33 +1,60 @@
-[{
-    "itemTitle":"AppleiPhone5s(16GB)",
-    "itemThumbImgUrl":"http://goo.gl/Savc8d",
-    "shortDescr":"AppleiOS,экран 4\"IPS,процессор 1300МГц (2ядр.),аккумулятор 1560мАч",
-    "rating":4.5,
-    "price":{
-        "max":"3200",
-        "min":"790"
-    },
-    "techInfo":{
-        "thumbs":[
-            {
-                "thumbURL":"http://goo.gl/0HfwQG",
-                "fullSizeURL":"http://goo.gl/wzOUwp"
+[
+    {
+        "itemTitle": "AppleiPhone5s(16GB)",
+        "itemThumbImgUrl": "http://goo.gl/Savc8d",
+        "shortDescr": "AppleiOS,экран 4\"IPS,процессор 1300МГц (2ядр.),аккумулятор 1560мАч",
+        "rating": 4.5,
+        "price": {
+            "max": "3200",
+            "min": "790"
+        },
+        "techInfo": {
+            "thumbs": [
+                {
+                    "thumbURL": "http://goo.gl/0HfwQG",
+                    "fullSizeURL": "http://goo.gl/wzOUwp"
+                }
+            ],
+            "birthday": {
+                "title": "Production date",
+                "value": "2013"
+            },
+            "band": {
+                "title": "Standard connection",
+                "value": "GSM(2G),EDGE(2.9G),HSPA+(3.75G),LTE(4G)"
+            },
+            "mobile_type": {
+                "title": "Type",
+                "value": "smartphone"
             }
-
-        ],
-        "birthday":{
-            "title":"Production date",
-            "value":"2013"
-        },
-        "band":{
-            "title":"Standard connection",
-            "value":"GSM(2G),EDGE(2.9G),HSPA+(3.75G),LTE(4G)"
-        },
-        "mobile_type":{
-            "title":"Type",
-            "value":"smartphone"
         }
-
+    },
+    {},
+    {},
+    {},
+    {},
+    {},
+    {},
+    {
+        "itemTitle": "CAS",
+        "itemThumbImgUrl": "CA"
+    },
+    {
+        "itemTitle": "apple",
+        "itemThumbImgUrl": "http://content2.onliner.by/catalog/device/icon/6cd5eef5b1c33096963ebe862912cf6b.jpg",
+        "shortDescr": "super",
+        "price": "400",
+        "birthday": "mart",
+        "band": "band",
+        "mobileType": "smartphone"
+    },
+    {
+        "itemTitle": "apple",
+        "itemThumbImgUrl": "http://content2.onliner.by/catalog/device/100/0355498f93f0c60a6bb05ad345885c1f.jpg",
+        "shortDescr": "klass",
+        "price": "899",
+        "birthday": "date",
+        "band": "band",
+        "mobileType": "naga"
     }
-}
 ]
