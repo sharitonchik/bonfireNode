@@ -29,7 +29,7 @@
         <div class="row">
             <div class="col-lg-4 col-md-5 col-sm-6 col-xs-12">
                 <div class="logo">
-                    <a class="logo-img" href="#"><img src="../images/logo_2.png" alt="" title=""/></a>
+                    <a class="logo-img" href="../pages/index.html"><img src="../images/logo_2.png" alt="" title=""/></a>
                 </div>
             </div>
         </div>
@@ -122,127 +122,91 @@
             </div>
         </div>
         <div class="row">
-            <!-- Button trigger modal -->
-            <button class="button btn-sign" data-toggle="modal" data-target="#myModal">
-                Add phone
-            </button>
-            <!-- Modal -->
-            <div class="addPhone-form-container">
-                <form id="addPhone-form" onsubmit="">
-                </form>
-            </div>
-            <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel"
-                 aria-hidden="true">
-                <div class="modal-dialog">
-                    <div class="modal-content">
-                        <div class="modal-header">
-                            <button type="button" class="close" data-dismiss="modal"><span
-                                    aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
-                            <h4 class="modal-title" id="myModalLabel">New Phone</h4>
-                        </div>
-                        <div class="modal-body">
-                            <div class="row row-popup">
-                                <!--itemTitle-->
-                                <div class="registr-item clearfix">
-                                    <label for="itemTitle" class="col-lg-5 registr-label">Title</label>
-                                    <div class="col-lg-6 col-md-5 col-sm-5 col-xs-5">
-                                        <input type="text" class="input-common" id="itemTitle" value=""
-                                               placeholder="title" autofocus required>
-                                    </div>
-                                </div>
+            <input type="button" value="Show form" id="show-button">
+
+            <div id="prompt-form-container">
+                <form id="prompt-form">
+                    <div class="row row-popup">
+                        <!--itemTitle-->
+                        <div class="registr-item clearfix">
+                            <label for="itemTitle" class="col-lg-5 registr-label">Title</label>
+                            <div class="col-lg-6 col-md-5 col-sm-5 col-xs-5">
+                                <input type="text" class="input-common" id="itemTitle" value=""
+                                       placeholder="title" autofocus required>
                             </div>
-                            <div class="row row-popup">
-                                <!--itemThumbImgUrl-->
-                                <div class="registr-item clearfix">
-                                    <label for="itemThumbImgUrl" class="col-lg-5 registr-label">Image Url</label>
-                                    <div class="col-lg-6 col-md-5 col-sm-5 col-xs-5">
-                                        <input type="text" class="input-common" id="itemThumbImgUrl" value=""
-                                               placeholder="image Url" required>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="row row-popup">
-                                <!--shortDescr-->
-                                <div class="registr-item clearfix">
-                                    <label for="shortDescr" class="col-lg-5 registr-label">Short description</label>
-                                    <div class="col-lg-6 col-md-5 col-sm-5 col-xs-5">
-                                        <input type="text" class="input-common" id="shortDescr" value=""
-                                               placeholder="short description" required>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="row row-popup">
-                                <!--price-->
-                                <div class="registr-item clearfix">
-                                    <label for="price" class="col-lg-5 registr-label">Price</label>
-                                    <div class="col-lg-6 col-md-5 col-sm-5 col-xs-5">
-                                        <input type="text" class="input-common" id="price" value=""
-                                               placeholder="price" required>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="row row-popup">
-                                <!--birthday-->
-                                <div class="registr-item clearfix">
-                                    <label for="birthday" class="col-lg-5 registr-label">Production date</label>
-                                    <div class="col-lg-6 col-md-5 col-sm-5 col-xs-5">
-                                        <input type="text" class="input-common" id="birthday" value=""
-                                               placeholder="birthday" required>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="row row-popup">
-                                <!--band-->
-                                <div class="registr-item clearfix">
-                                    <label for="band" class="col-lg-5 registr-label">Band</label>
-                                    <div class="col-lg-6 col-md-5 col-sm-5 col-xs-5">
-                                        <input type="text" class="input-common" id="band" value="" placeholder="band" required>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="row row-popup">
-                                <!--mobile_type-->
-                                <div class="checkbox-item">
-                                    <label for="mobile_type" class="col-lg-5 registr-label">Type</label>
-                                    <div class="col-lg-6 col-md-5 col-sm-5 col-xs-5">
-                                        <input type="text" class="input-common" id="mobile_type" value="" placeholder="mobile type" >
-                                    </div>
-                                </div>
-                            </div>
-                            <!--<div class="row row-popup">
-                                <div class="checkbox-item">
-                                    <label for="product_ts" class="col-lg-5 checkbox-label">Flashlight</label>
-                                    <div class="col-lg-6 col-md-5 col-sm-5 col-xs-5">
-                                        <input type="checkbox" class="checkbox-item" id="product_flashlight" value="">
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="row row-popup clearfix">
-                                <div class="checkbox-item">
-                                    <label for="product_ts" class="col-lg-5 checkbox-label">Nfc</label>
-                                    <div class="col-lg-6 col-md-5 col-sm-5 col-xs-5">
-                                        <input type="checkbox" class="checkbox-item" id="product_flashlight" value="">
-                                    </div>
-                                </div>
-                            </div>-->
-                        </div>
-                        <div class="modal-footer">
-                            <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
-                            <button type="submit" class="btn btn-primary" onclick="saveChanges()">
-                                Save changes
-                            </button>
                         </div>
                     </div>
-                </div>
+                    <div class="row row-popup">
+                        <!--itemThumbImgUrl-->
+                        <div class="registr-item clearfix">
+                            <label for="itemThumbImgUrl" class="col-lg-5 registr-label">Image Url</label>
+                            <div class="col-lg-6 col-md-5 col-sm-5 col-xs-5">
+                                <input type="text" class="input-common" id="itemThumbImgUrl" value=""
+                                       placeholder="image Url" required>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row row-popup">
+                        <!--shortDescr-->
+                        <div class="registr-item clearfix">
+                            <label for="shortDescr" class="col-lg-5 registr-label">Short description</label>
+                            <div class="col-lg-6 col-md-5 col-sm-5 col-xs-5">
+                                <input type="text" class="input-common" id="shortDescr" value=""
+                                       placeholder="short description" required>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row row-popup">
+                        <!--price-->
+                        <div class="registr-item clearfix">
+                            <label for="price" class="col-lg-5 registr-label">Price</label>
+                            <div class="col-lg-6 col-md-5 col-sm-5 col-xs-5">
+                                <input type="text" class="input-common" id="price" value=""
+                                       placeholder="price" required>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row row-popup">
+                        <!--birthday-->
+                        <div class="registr-item clearfix">
+                            <label for="birthday" class="col-lg-5 registr-label">Production date</label>
+                            <div class="col-lg-6 col-md-5 col-sm-5 col-xs-5">
+                                <input type="text" class="input-common" id="birthday" value=""
+                                       placeholder="birthday" required>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row row-popup">
+                        <!--band-->
+                        <div class="registr-item clearfix">
+                            <label for="band" class="col-lg-5 registr-label">Band</label>
+                            <div class="col-lg-6 col-md-5 col-sm-5 col-xs-5">
+                                <input type="text" class="input-common" id="band" value="" placeholder="band" required>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row row-popup">
+                        <!--mobile_type-->
+                        <div class="registr-item clearfix">
+                            <label for="mobile_type" class="col-lg-5 registr-label">Type</label>
+                            <div class="col-lg-6 col-md-5 col-sm-5 col-xs-5">
+                                <input type="text" class="input-common" id="mobile_type" value="" placeholder="mobile type" required>
+                            </div>
+                        </div>
+                    </div>
+                    <input type="submit" value="Ok">
+                    <input type="button" name="cancel" value="Cancel">
+                </form>
             </div>
+
         </div>
 
     </main>
     <div class="footer-push"></div>
 </section>
 
-<script src="../scripts/r-script.js"></script>
-<script src="../scripts/home.js"></script>
+<script src="../scripts/showItem.js"></script>
+<script src="../scripts/addItem.js"></script>
 
 <footer class="footer">
     <div class="footer_inner">

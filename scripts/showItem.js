@@ -4,52 +4,19 @@ var list = document.getElementById('list_id');
 document.getElementById('find').addEventListener('click',sort,false);
 
 function displayPhoneProduct(){
+    var prButtonWrap = document.createElement('div');
+    prButtonWrap.className = 'widgets-list-item-buttons-wrap btn-group clearfix';
+    newItem.appendChild(prButtonWrap);
 
-    for (var i=0;i<testJson.length;i++){
-        var newItem = document.createElement('li'); //create li
-        newItem.className = 'widgets-list-item'; // assign class
-        list.appendChild(newItem); //move li under ul
-        var nameDiv = document.createElement('div'); // crete div1
-        nameDiv.className = 'widgets-list-item-inner';
-        newItem.appendChild(nameDiv); // move div under li
-        var item = testJson[i];
-        for (var key in item){
-            if (key=='image'){
-                var prImage = document.createElement('img');
-                prImage.className = 'phone-image';
-                prImage.setAttribute("src",item[key]);
-                nameDiv.insertBefore(prImage,prName);
+    var prButtonAdd = document.createElement('button');
+    prButtonAdd.className = 'widget-button btn btn-default';
+    prButtonAdd.innerHTML = 'Add to cart';
+    prButtonWrap.appendChild(prButtonAdd);
 
-            }
-            else if (key=='name'){
-                var prName = document.createElement('a');
-                prName.className = 'links-main';
-                prName.innerHTML = item[key];
-                nameDiv.appendChild(prName);
-            }
-            else if (key=='description'){
-                var prDescr = document.createElement('p');
-                prDescr.className ='p-main';
-                prDescr.innerHTML = item[key];
-                nameDiv.appendChild(prDescr);
-            }
-
-        }
-        var prButtonWrap = document.createElement('div');
-        prButtonWrap.className = 'widgets-list-item-buttons-wrap btn-group clearfix';
-        newItem.appendChild(prButtonWrap);
-
-        var prButtonAdd = document.createElement('button');
-        prButtonAdd.className = 'widget-button btn btn-default';
-        prButtonAdd.innerHTML = 'Add to cart';
-        prButtonWrap.appendChild(prButtonAdd);
-
-        var prButtonCompare = document.createElement('button');
-        prButtonCompare.className = 'widget-button btn btn-default';
-        prButtonCompare.innerHTML = 'Compare';
-        prButtonWrap.appendChild(prButtonCompare);
-    }
-
+    var prButtonCompare = document.createElement('button');
+    prButtonCompare.className = 'widget-button btn btn-default';
+    prButtonCompare.innerHTML = 'Compare';
+    prButtonWrap.appendChild(prButtonCompare);
 }
 
 function displayAddedProduct(newProduct){
@@ -113,7 +80,7 @@ function sort(event){
             }
         }
 
-     }
+    }
     event = event || window.event; // Кроссбраузерно получить событие
 
     if (event.stopPropagation) { // существует ли метод?
@@ -134,6 +101,7 @@ function phoneItemShow(elem) {
     xhr.onreadystatechange = function(){
         if (xhr.readyState !=4) return;
         var event = JSON.parse(xhr.responseText);
+
         for (var i=0;i<event.length;i++){
             var newItem = document.createElement('li'); //create li
             newItem.className = 'widgets-list-item'; // assign class
@@ -175,13 +143,10 @@ function phoneItemShow(elem) {
                     }
 
                 }
-
-
-
             }
         }
-
     }
-
     xhr.send(null);
 }
+
+
