@@ -51,6 +51,8 @@ app.get('/addProduct', function(req, resp){
     var params = url.parse(req.url,true).query;
     console.log('req.params', params);
 
+    params['price'] = JSON.parse(params['price']);
+
     db.push(params);
     fs.writeFile('db/products.json', JSON.stringify(db, null, 4), function (err) {
         if (err) {
