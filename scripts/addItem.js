@@ -1,41 +1,48 @@
-function Phone(itemTitle,itemThumbImgUrl,shortDescr,price,birthday,band,mobile_type){
-    this.itemTitle = itemTitle;
-    this.itemThumbImgUrl = itemThumbImgUrl;
-    this.shortDescr = shortDescr;
-    this.price = price;
-    this.birthday = birthday;
-    this.band = band;
-    this.mobile_type = mobile_type;
-
-}
-
 
 function saveChanges(){
 
-    var itemTitleValue = document.getElementById('itemTitle').value;
-    var itemTitleName = document.getElementById('itemTitle').name;
+    var itemTitle = document.getElementById('itemTitle');
+    var itemTitleValue = itemTitle.value;
+    var itemTitleName = itemTitle.name;
 
-    var itemThumbImgUrlValue = document.getElementById('itemThumbImgUrl').value;
-    var itemThumbImgUrlName = document.getElementById('itemThumbImgUrl').name;
+    var itemThumbImgUrl = document.getElementById('itemThumbImgUrl');
+    var itemThumbImgUrlValue = itemThumbImgUrl.value;
+    var itemThumbImgUrlName = itemThumbImgUrl.name;
 
-    var shortDescrValue = document.getElementById('shortDescr').value;
-    var shortDescrName = document.getElementById('shortDescr').name;
+    var shortDescr = document.getElementById('shortDescr');
+    var shortDescrValue = shortDescr.value;
+    var shortDescrName = shortDescr.name;
 
-    var priceValue = document.getElementById('price').value;
-    var priceName = document.getElementById('price').name;
+    var priceMin = document.getElementById('priceMin');
+    var priceMinValue = priceMin.value;
+    var priceMinName = priceMin.name;
 
-    var birthdayValue = document.getElementById('birthday').value;
-    var birthdayName = document.getElementById('birthday').name;
+    var priceMax = document.getElementById('priceMax');
+    var priceMaxValue = priceMax.value;
+    var priceMaxName = priceMax.name;
 
-    var bandValue = document.getElementById('band').value;
-    var bandName = document.getElementById('band').name;
+    function priceObj(min,max){
+        this.min = min;
+        this.max = max;
+    }
 
-    var mobileTypeValue = document.getElementById('mobile_type').value;
-    var mobileTypeName = document.getElementById('mobile_type').name;
+    var priceObj = new priceObj(priceMaxValue,priceMinValue);
 
-    //var newPhone = new Phone(itemTitle,itemThumbImgUrl,shortDescr,price,birthday,band,mobile_type);
+    var birthday = document.getElementById('birthday');
+    var birthdayValue = birthday.value;
+    var birthdayName = birthday.name;
+
+    var band = document.getElementById('band');
+    var bandValue = band.value;
+    var bandName = band.name;
+
+    var mobileType = document.getElementById('mobile_type');
+    var mobileTypeValue = mobileType.value;
+    var mobileTypeName = mobileType.name;
+
+
     var params = 'itemTitle=' + encodeURIComponent(itemTitleValue) + '&itemThumbImgUrl=' + encodeURIComponent(itemThumbImgUrlValue)
-        + '&shortDescr=' + encodeURIComponent(shortDescrValue) + '&price=' + encodeURIComponent(priceValue) +
+        + '&shortDescr=' + encodeURIComponent(shortDescrValue) + '&price=' + encodeURIComponent(JSON.stringify(priceObj)) +
         '&birthday=' + encodeURIComponent(birthdayValue) + '&band=' + encodeURIComponent(bandName) +
         '&mobileType=' + encodeURIComponent(mobileTypeValue);
 
@@ -43,8 +50,6 @@ function saveChanges(){
     xhr.open('GET','/addProduct?' + params,true);
     xhr.onreadystatechange = function() {
         if (xhr.readyState != 4) return;
-        alert(xhr.responseText);
-
     }
     xhr.send(null);
 

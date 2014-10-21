@@ -56,5 +56,32 @@
         "birthday": "date",
         "band": "band",
         "mobileType": "naga"
+    },
+    {
+        "itemTitle": "telephone",
+        "itemThumbImgUrl": "http://content2.onliner.by/catalog/device/100/dd233397f9290d8574bf0b924398bada.jpg",
+        "shortDescr": "short",
+        "price": "{\"min\":\"300\",\"max\":\"100\"}",
+        "birthday": "kdk",
+        "band": "band",
+        "mobileType": "csadk"
+    },
+    {
+        "itemTitle": "phone",
+        "itemThumbImgUrl": "http://content2.onliner.by/catalog/device/100/dd233397f9290d8574bf0b924398bada.jpg",
+        "shortDescr": "sd",
+        "price": "{\"min\":\"100\",\"max\":\"20\"}",
+        "birthday": "dsfc",
+        "band": "band",
+        "mobileType": "vfdsx"
+    },
+    {
+        "itemTitle": "fsd",
+        "itemThumbImgUrl": "ASDSA",
+        "shortDescr": "DV",
+        "price": "{\"min\":\"300\",\"max\":\"100\"}",
+        "birthday": "DA",
+        "band": "band",
+        "mobileType": "CDAC"
     }
 ]
