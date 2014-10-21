@@ -32,19 +32,66 @@ function saveChanges(){
     var birthdayValue = birthday.value;
     var birthdayName = birthday.name;
 
+    function birthdayObj(value){
+        this.title = 'Production date';
+        this.value = value;
+    }
+
+    var birthdayObj = new birthdayObj(birthdayValue);
+
     var band = document.getElementById('band');
     var bandValue = band.value;
     var bandName = band.name;
+
+    function bandObj(value){
+        this.title = 'Standard connection';
+        this.value = value;
+    }
+
+    var bandObj = new bandObj(bandValue);
 
     var mobileType = document.getElementById('mobile_type');
     var mobileTypeValue = mobileType.value;
     var mobileTypeName = mobileType.name;
 
+    function mobileTypeObj(value){
+        this.title = 'Type';
+        this.value = value;
+    }
+
+    var mobileTypeObj = new  mobileTypeObj(mobileTypeValue);
+
+    var thumbURL = document.getElementById('thumbURL');
+    var thumbURLValue = thumbURL.value;
+    var thumbURLName = thumbURL.name;
+
+    var fullSizeURL = document.getElementById('fullSizeURL');
+    var fullSizeURLValue = fullSizeURL.value;
+    var fullSizeURLName = fullSizeURL.name;
+
+    function thumbsArrayItem(thumbURL,fullSizeURL){
+        this.thumbURL = thumbURL;
+        this.fullSizeURL = fullSizeURL;
+    }
+
+    var thumbsArrayItem = new thumbsArrayItem(thumbURLValue,fullSizeURLValue);
+
+    var thumbsArray = [];
+    thumbsArray.push(thumbsArrayItem);
+
+    function techInfoObj(thumbs,birthday,band,mobile_type){
+        this.thumbs = thumbs;
+        this.birthday = birthday;
+        this.band = band;
+        this.mobile_type = mobile_type;
+    }
+
+    var techInfoObj = new techInfoObj(thumbsArray,birthdayObj,bandObj,mobileTypeObj);
+
 
     var params = 'itemTitle=' + encodeURIComponent(itemTitleValue) + '&itemThumbImgUrl=' + encodeURIComponent(itemThumbImgUrlValue)
         + '&shortDescr=' + encodeURIComponent(shortDescrValue) + '&price=' + encodeURIComponent(JSON.stringify(priceObj)) +
-        '&birthday=' + encodeURIComponent(birthdayValue) + '&band=' + encodeURIComponent(bandName) +
-        '&mobileType=' + encodeURIComponent(mobileTypeValue);
+        '&techInfo=' + encodeURIComponent(JSON.stringify(techInfoObj));
 
     var xhr = new XMLHttpRequest();
     xhr.open('GET','/addProduct?' + params,true);

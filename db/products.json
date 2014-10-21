@@ -29,59 +29,33 @@
             }
         }
     },
-    {},
-    {},
-    {},
-    {},
-    {},
-    {},
     {
-        "itemTitle": "CAS",
-        "itemThumbImgUrl": "CA"
-    },
-    {
-        "itemTitle": "apple",
-        "itemThumbImgUrl": "http://content2.onliner.by/catalog/device/icon/6cd5eef5b1c33096963ebe862912cf6b.jpg",
-        "shortDescr": "super",
-        "price": "400",
-        "birthday": "mart",
-        "band": "band",
-        "mobileType": "smartphone"
-    },
-    {
-        "itemTitle": "apple",
-        "itemThumbImgUrl": "http://content2.onliner.by/catalog/device/100/0355498f93f0c60a6bb05ad345885c1f.jpg",
-        "shortDescr": "klass",
-        "price": "899",
-        "birthday": "date",
-        "band": "band",
-        "mobileType": "naga"
-    },
-    {
-        "itemTitle": "telephone",
-        "itemThumbImgUrl": "http://content2.onliner.by/catalog/device/100/dd233397f9290d8574bf0b924398bada.jpg",
-        "shortDescr": "short",
-        "price": "{\"min\":\"300\",\"max\":\"100\"}",
-        "birthday": "kdk",
-        "band": "band",
-        "mobileType": "csadk"
-    },
-    {
-        "itemTitle": "phone",
-        "itemThumbImgUrl": "http://content2.onliner.by/catalog/device/100/dd233397f9290d8574bf0b924398bada.jpg",
-        "shortDescr": "sd",
-        "price": "{\"min\":\"100\",\"max\":\"20\"}",
-        "birthday": "dsfc",
-        "band": "band",
-        "mobileType": "vfdsx"
-    },
-    {
-        "itemTitle": "fsd",
-        "itemThumbImgUrl": "ASDSA",
-        "shortDescr": "DV",
-        "price": "{\"min\":\"300\",\"max\":\"100\"}",
-        "birthday": "DA",
-        "band": "band",
-        "mobileType": "CDAC"
+        "itemTitle": "vdfcv",
+        "itemThumbImgUrl": "v d",
+        "shortDescr": "vdzv z",
+        "price": {
+            "min": "78",
+            "max": "78"
+        },
+        "techInfo": {
+            "thumbs": [
+                {
+                    "thumbURL": "czdxcv z",
+                    "fullSizeURL": "vcdxzvdz"
+                }
+            ],
+            "birthday": {
+                "title": "Production date",
+                "value": "2012"
+            },
+            "band": {
+                "title": "Standard connection",
+                "value": "czdx"
+            },
+            "mobile_type": {
+                "title": "Type",
+                "value": "v zdcxv cz"
+            }
+        }
     }
 ]
