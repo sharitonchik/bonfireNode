@@ -53,7 +53,24 @@ app.get('/addProduct', function(req, resp){
     console.log('req.params', params);
 
     var idPhone = params['id'];
-    var phoneInfoObj =  JSON.parse(params['phoneInfoObj']);
+    var titlePar = params['itemTitle'];
+    var itemThumbImgUrlPar = params['itemThumbImgUrl'];
+    var shortDescPar = params['shortDesc'];
+    params['price'] = JSON.parse(params['price']);
+    params['techInfo'] = JSON.parse(params['techInfo']);
+    var pricePar = params['price'];
+    var techPar = params['techInfo'];
+
+    function phoneInfoObj(titlePar,itemThumbImgUrlPar,shortDescPar,pricePar,techPar){
+        this.itemTitle = titlePar;
+        this.itemThumbImgUrl = itemThumbImgUrlPar;
+        this.shortDescr = shortDescPar;
+        this.price = pricePar;
+        this.techInfo = techPar;
+    }
+
+    var phoneInfoObj = new phoneInfoObj(titlePar,itemThumbImgUrlPar,shortDescPar,pricePar,techPar);
+
 
     db[idPhone] = phoneInfoObj;
 

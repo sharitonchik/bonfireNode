@@ -1,3 +1,60 @@
 {
-
+    "b130ab5b-5be2-ae69-4e67-76a8a384b219": {
+        "itemTitle": "cvc z",
+        "itemThumbImgUrl": "v zcvb",
+        "shortDescr": "v xcv",
+        "price": {
+            "min": "88",
+            "max": "87"
+        },
+        "techInfo": {
+            "thumbs": [
+                {
+                    "thumbURL": "vsdv",
+                    "fullSizeURL": "vsdf"
+                }
+            ],
+            "birthday": {
+                "title": "Production date",
+                "value": "2012"
+            },
+            "band": {
+                "title": "Standard connection",
+                "value": "vsd"
+            },
+            "mobile_type": {
+                "title": "Type",
+                "value": "vsdfv"
+            }
+        }
+    },
+    "fd096ba6-1a73-0897-2997-a59c0fb40d61": {
+        "itemTitle": "sVDf",
+        "itemThumbImgUrl": "vfdsvbs",
+        "shortDescr": "vfdsv",
+        "price": {
+            "min": "55",
+            "max": "89"
+        },
+        "techInfo": {
+            "thumbs": [
+                {
+                    "thumbURL": "vbsf",
+                    "fullSizeURL": "bdsf"
+                }
+            ],
+            "birthday": {
+                "title": "Production date",
+                "value": "23"
+            },
+            "band": {
+                "title": "Standard connection",
+                "value": "gfs"
+            },
+            "mobile_type": {
+                "title": "Type",
+                "value": "gvsfd"
+            }
+        }
+    }
 }
