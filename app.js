@@ -46,16 +46,18 @@ app.get('/addProduct', function(req, resp){
     var db = fs.readFileSync('db/products.json', {
         encoding: 'utf8'
     });
+
     db = JSON.parse(db);
 
     var params = url.parse(req.url,true).query;
     console.log('req.params', params);
 
-    params['price'] = JSON.parse(params['price']);
-    params['techInfo'] = JSON.parse(params['techInfo']);
+    var idPhone = params['id'];
+    var phoneInfoObj =  JSON.parse(params['phoneInfoObj']);
+
+    db[idPhone] = phoneInfoObj;
 
 
-    db.push(params);
     fs.writeFile('db/products.json', JSON.stringify(db, null, 4), function (err) {
         if (err) {
             console.log('err add', err);

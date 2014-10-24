@@ -114,7 +114,7 @@ function saveChanges(){
 
     var uuid = guid();
 
-    var params =  encodeURIComponent(uuid) + '=' + encodeURIComponent(JSON.stringify(phoneInfoObj));
+    var params =  'id=' + uuid + '&phoneInfoObj' + encodeURIComponent(JSON.stringify(phoneInfoObj));
 
     var xhr = new XMLHttpRequest();
     xhr.open('GET','/addProduct?' + params,true);
