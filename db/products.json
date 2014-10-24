@@ -1,7 +1,7 @@
 {
     "b130ab5b-5be2-ae69-4e67-76a8a384b219": {
         "itemTitle": "cvc z",
-        "itemThumbImgUrl": "v zcvb",
+        "itemThumbImgUrl": "http://content2.onliner.by/catalog/device/icon/57769fe8842b9796743affbee5a53c06.jpg",
         "shortDescr": "v xcv",
         "price": {
             "min": "88",
@@ -30,7 +30,7 @@
     },
     "fd096ba6-1a73-0897-2997-a59c0fb40d61": {
         "itemTitle": "sVDf",
-        "itemThumbImgUrl": "vfdsvbs",
+        "itemThumbImgUrl": "http://content2.onliner.by/catalog/device/icon/bda207373d2d4afbb446d6998814a3a0.jpg",
         "shortDescr": "vfdsv",
         "price": {
             "min": "55",
@@ -54,6 +54,35 @@
             "mobile_type": {
                 "title": "Type",
                 "value": "gvsfd"
+            }
+        }
+    },
+    "4625ecad-bc1b-0538-b6ab-a53f48cd9ec0": {
+        "itemTitle": "phone",
+        "itemThumbImgUrl": "http://content2.onliner.by/catalog/device/100/5c89a202887278d66e83e9ea119a537d.jpg",
+        "shortDescr": "lal",
+        "price": {
+            "min": "300",
+            "max": "200"
+        },
+        "techInfo": {
+            "thumbs": [
+                {
+                    "thumbURL": "cvs",
+                    "fullSizeURL": "vsdv"
+                }
+            ],
+            "birthday": {
+                "title": "Production date",
+                "value": "2013"
+            },
+            "band": {
+                "title": "Standard connection",
+                "value": "csd"
+            },
+            "mobile_type": {
+                "title": "Type",
+                "value": "smartphone"
             }
         }
     }

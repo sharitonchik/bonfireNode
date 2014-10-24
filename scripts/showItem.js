@@ -40,45 +40,48 @@ function sort(event){
 
 document.addEventListener('DOMContentLoaded',phoneItemShow,false);
 
-function phoneItemShow(elem) {
+
+function phoneItemShow() {
     var xhr = new XMLHttpRequest();
     xhr.open('GET', '/getProducts', true);
     xhr.onreadystatechange = function () {
         if (xhr.readyState != 4) return;
-        var event = JSON.parse(xhr.responseText);
+        var phoneResponse = JSON.parse(xhr.responseText);
 
-        for (var i = 0; i < event.length; i++) {
+        for (var key in phoneResponse){
             var newItem = document.createElement('li'); //create li
             newItem.className = 'widgets-list-item'; // assign class
             list.appendChild(newItem); //move li under ul
             var nameDiv = document.createElement('div'); // crete div1
             nameDiv.className = 'widgets-list-item-inner';
             newItem.appendChild(nameDiv);
-            var item = event[i];
-            for (var key in item) {
-                if (key == 'itemThumbImgUrl') {
+
+            var phoneItem = phoneResponse[key];
+
+            for (var keyInner in phoneItem){
+
+                if (keyInner == 'itemThumbImgUrl') {
                     var prImage = document.createElement('img');
                     prImage.className = 'phone-image';
-                    prImage.setAttribute("src", item[key]);
+                    prImage.setAttribute("src", phoneItem[keyInner]);
                     nameDiv.insertBefore(prImage, prName);
                 }
-
-                if (key == 'itemTitle') {
+                if (keyInner == 'itemTitle') {
                     var prName = document.createElement('a');
                     prName.className = 'links-main';
-                    prName.innerHTML = item[key];
+                    prName.innerHTML = phoneItem[keyInner];
                     nameDiv.appendChild(prName);
                 }
 
-                if (key == 'shortDescr') {
+                if (keyInner == 'shortDescr') {
                     var prDescr = document.createElement('p');
                     prDescr.className = 'p-main';
-                    prDescr.innerHTML = item[key];
+                    prDescr.innerHTML = phoneItem[keyInner];
                     nameDiv.appendChild(prDescr);
                 }
 
-                if (key == 'price') {
-                    var newPrice = item[key];
+                if (keyInner == 'price') {
+                    var newPrice = phoneItem[keyInner];
                     for (var key1 in newPrice) {
                         var prPrice = document.createElement('h4');
                         prPrice.className = 'header-main';
@@ -97,16 +100,18 @@ function phoneItemShow(elem) {
             var prButtonAdd = document.createElement('button');
             prButtonAdd.className = 'addToCartButton';
             prButtonAdd.innerHTML = 'Add to cart';
-            prButtonAdd.dataset.itemName = item.itemTitle;
+            prButtonAdd.dataset.itemName = phoneItem.itemTitle;
             prButtonWrap.appendChild(prButtonAdd);
-
         }
+
 
         a();
     }
 
     xhr.send(null);
 }
+
+
 
 function a() {
     var addToCartButtonArray = document.getElementsByClassName('addToCartButton');
