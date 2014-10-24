@@ -3,61 +3,6 @@ var list = document.getElementById('list_id');
 
 document.getElementById('find').addEventListener('click',sort,false);
 
-function displayPhoneProduct(){
-    var prButtonWrap = document.createElement('div');
-    prButtonWrap.className = 'widgets-list-item-buttons-wrap btn-group clearfix';
-    newItem.appendChild(prButtonWrap);
-
-    var prButtonAdd = document.createElement('button');
-    prButtonAdd.className = 'widget-button btn btn-default';
-    prButtonAdd.innerHTML = 'Add to cart';
-    prButtonWrap.appendChild(prButtonAdd);
-
-    var prButtonCompare = document.createElement('button');
-    prButtonCompare.className = 'widget-button btn btn-default';
-    prButtonCompare.innerHTML = 'Compare';
-    prButtonWrap.appendChild(prButtonCompare);
-}
-
-function displayAddedProduct(newProduct){
-    var newItem = document.createElement('li'); //create li
-    newItem.className = 'widgets-list-item'; // assign class
-    list.appendChild(newItem); //move li under ul
-    var nameDiv = document.createElement('div'); // crete div1
-    nameDiv.className = 'widgets-list-item-inner';
-    newItem.appendChild(nameDiv);
-
-    for (var key in newProduct){
-        if (key=='image'){
-            var prImage = document.createElement('img');
-            prImage.className = 'phone-image';
-            prImage.setAttribute("src",newProduct[key]);
-            nameDiv.insertBefore(prImage,prName);
-
-        }
-
-        else if (key=='description'){
-            var prDescr = document.createElement('p');
-            prDescr.className ='p-main';
-            prDescr.innerHTML = newProduct[key];
-            nameDiv.appendChild(prDescr);
-        }
-    }
-
-    var prButtonWrap = document.createElement('div');
-    prButtonWrap.className = 'widgets-list-item-buttons-wrap btn-group clearfix';
-    newItem.appendChild(prButtonWrap);
-
-    var prButtonAdd = document.createElement('button');
-    prButtonAdd.className = 'widget-button btn btn-default';
-    prButtonAdd.innerHTML = 'Add to cart';
-    prButtonWrap.appendChild(prButtonAdd);
-
-    var prButtonCompare = document.createElement('button');
-    prButtonCompare.className = 'widget-button btn btn-default';
-    prButtonCompare.innerHTML = 'Compare';
-    prButtonWrap.appendChild(prButtonCompare);
-}
 
 
 function sort(event){
@@ -97,12 +42,12 @@ document.addEventListener('DOMContentLoaded',phoneItemShow,false);
 
 function phoneItemShow(elem) {
     var xhr = new XMLHttpRequest();
-    xhr.open('GET','/getProducts',true);
-    xhr.onreadystatechange = function(){
-        if (xhr.readyState !=4) return;
+    xhr.open('GET', '/getProducts', true);
+    xhr.onreadystatechange = function () {
+        if (xhr.readyState != 4) return;
         var event = JSON.parse(xhr.responseText);
 
-        for (var i=0;i<event.length;i++){
+        for (var i = 0; i < event.length; i++) {
             var newItem = document.createElement('li'); //create li
             newItem.className = 'widgets-list-item'; // assign class
             list.appendChild(newItem); //move li under ul
@@ -110,43 +55,86 @@ function phoneItemShow(elem) {
             nameDiv.className = 'widgets-list-item-inner';
             newItem.appendChild(nameDiv);
             var item = event[i];
-            for (var key in item){
-                if (key == 'itemThumbImgUrl'){
+            for (var key in item) {
+                if (key == 'itemThumbImgUrl') {
                     var prImage = document.createElement('img');
                     prImage.className = 'phone-image';
-                    prImage.setAttribute("src",item[key]);
-                    nameDiv.insertBefore(prImage,prName);
+                    prImage.setAttribute("src", item[key]);
+                    nameDiv.insertBefore(prImage, prName);
                 }
 
-                if (key == 'itemTitle'){
+                if (key == 'itemTitle') {
                     var prName = document.createElement('a');
                     prName.className = 'links-main';
                     prName.innerHTML = item[key];
                     nameDiv.appendChild(prName);
                 }
 
-                if (key == 'shortDescr'){
+                if (key == 'shortDescr') {
                     var prDescr = document.createElement('p');
                     prDescr.className = 'p-main';
                     prDescr.innerHTML = item[key];
                     nameDiv.appendChild(prDescr);
                 }
 
-                if (key == 'price'){
+                if (key == 'price') {
                     var newPrice = item[key];
-                    for (var key1 in newPrice){
+                    for (var key1 in newPrice) {
                         var prPrice = document.createElement('h4');
                         prPrice.className = 'header-main';
                         prPrice.innerHTML = newPrice[key1];
-                        nameDiv.insertBefore(prPrice,prDescr);
+                        nameDiv.insertBefore(prPrice, prDescr);
 
                     }
 
                 }
             }
+
+            var prButtonWrap = document.createElement('div');
+            prButtonWrap.className = 'widgets-list-item-buttons-wrap btn-group clearfix';
+            newItem.appendChild(prButtonWrap);
+
+            var prButtonAdd = document.createElement('button');
+            prButtonAdd.className = 'addToCartButton';
+            prButtonAdd.innerHTML = 'Add to cart';
+            prButtonAdd.dataset.itemName = item.itemTitle;
+            prButtonWrap.appendChild(prButtonAdd);
+
         }
+
+        a();
     }
+
     xhr.send(null);
 }
+
+function a() {
+    var addToCartButtonArray = document.getElementsByClassName('addToCartButton');
+    for (var i = 0; i < addToCartButtonArray.length; i++) {
+        addToCartButtonArray[i].addEventListener('click', addToCart, false);
+    }
+}
+
+
+function addToCart() {
+    alert(this.dataset.itemName);
+    var cartItem = [];
+    cartItem.push(this.dataset.itemName);
+    for (var i = 0; i <= cartItem.length; i++) {
+        var cObj = cartItem[i];
+        for (var key in cObj) {
+            alert(key);
+        }
+
+    }
+    var cartItemJson = JSON.stringify(cartItem);
+    localStorage.setItem('Product', cartItemJson);
+    alert(localStorage.getItem('Product'));
+}
+
+
+
+
+
 
 

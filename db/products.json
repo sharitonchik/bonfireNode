@@ -30,31 +30,60 @@
         }
     },
     {
-        "itemTitle": "vdfcv",
-        "itemThumbImgUrl": "v d",
-        "shortDescr": "vdzv z",
+        "itemTitle": "fed",
+        "itemThumbImgUrl": "da",
+        "shortDescr": "vcfda",
         "price": {
-            "min": "78",
-            "max": "78"
+            "min": "90",
+            "max": "89"
         },
         "techInfo": {
             "thumbs": [
                 {
-                    "thumbURL": "czdxcv z",
-                    "fullSizeURL": "vcdxzvdz"
+                    "thumbURL": "hgf",
+                    "fullSizeURL": "vf"
                 }
             ],
             "birthday": {
                 "title": "Production date",
-                "value": "2012"
+                "value": "56"
             },
             "band": {
                 "title": "Standard connection",
-                "value": "czdx"
+                "value": "dckjd"
             },
             "mobile_type": {
                 "title": "Type",
-                "value": "v zdcxv cz"
+                "value": "dA"
+            }
+        }
+    },
+    {
+        "itemTitle": "Sumsung Alfa",
+        "itemThumbImgUrl": "http://content2.onliner.by/catalog/device/icon/57769fe8842b9796743affbee5a53c06.jpg",
+        "shortDescr": "Android, экран 4.7\" AMOLED (720x1280), процессор 1800 МГц (4 ядр.), память 32 ГБ, аккумулятор 1860 мАч",
+        "price": {
+            "min": "691",
+            "max": "560"
+        },
+        "techInfo": {
+            "thumbs": [
+                {
+                    "thumbURL": "na",
+                    "fullSizeURL": "na"
+                }
+            ],
+            "birthday": {
+                "title": "Production date",
+                "value": "2014"
+            },
+            "band": {
+                "title": "Standard connection",
+                "value": "band"
+            },
+            "mobile_type": {
+                "title": "Type",
+                "value": "smartphone"
             }
         }
     }

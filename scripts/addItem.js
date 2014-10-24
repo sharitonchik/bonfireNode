@@ -89,9 +89,32 @@ function saveChanges(){
     var techInfoObj = new techInfoObj(thumbsArray,birthdayObj,bandObj,mobileTypeObj);
 
 
-    var params = 'itemTitle=' + encodeURIComponent(itemTitleValue) + '&itemThumbImgUrl=' + encodeURIComponent(itemThumbImgUrlValue)
-        + '&shortDescr=' + encodeURIComponent(shortDescrValue) + '&price=' + encodeURIComponent(JSON.stringify(priceObj)) +
-        '&techInfo=' + encodeURIComponent(JSON.stringify(techInfoObj));
+    function phoneInfoObj(itemTitle,itemThumbImgUrl,shortDescr,price,techInfo){
+        this.itemTitle = itemTitle;
+        this.itemThumbImgUrl = itemThumbImgUrl;
+        this.shortDescr = shortDescr;
+        this.price = price;
+        this.techInfo = techInfo;
+    }
+
+    var phoneInfoObj = new phoneInfoObj(itemTitleValue,itemThumbImgUrlValue,shortDescrValue,priceObj,techInfoObj);
+
+
+    var guid = (function() {
+        function s4() {
+            return Math.floor((1 + Math.random()) * 0x10000)
+                .toString(16)
+                .substring(1);
+        }
+        return function() {
+            return s4() + s4() + '-' + s4() + '-' + s4() + '-' +
+                s4() + '-' + s4() + s4() + s4();
+        };
+    })();
+
+    var uuid = guid();
+
+    var params =  encodeURIComponent(uuid) + '=' + encodeURIComponent(JSON.stringify(phoneInfoObj));
 
     var xhr = new XMLHttpRequest();
     xhr.open('GET','/addProduct?' + params,true);
@@ -102,6 +125,7 @@ function saveChanges(){
 
 }
 
+<!--modal form-->
 
 function showCover() {
     var coverDiv = document.createElement('div');
@@ -139,3 +163,7 @@ function showPrompt() {
 document.getElementById('show-button').onclick = function() {
     showPrompt();
 };
+
+
+
+
