@@ -100,10 +100,9 @@ function phoneItemShow() {
             var prButtonAdd = document.createElement('button');
             prButtonAdd.className = 'addToCartButton';
             prButtonAdd.innerHTML = 'Add to cart';
-            prButtonAdd.dataset.itemName = phoneItem.itemTitle;
+            prButtonAdd.dataset.itemId = key;
             prButtonWrap.appendChild(prButtonAdd);
         }
-
 
         a();
     }
@@ -121,20 +120,12 @@ function a() {
 }
 
 
-function addToCart() {
-    alert(this.dataset.itemName);
-    var cartItem = [];
-    cartItem.push(this.dataset.itemName);
-    for (var i = 0; i <= cartItem.length; i++) {
-        var cObj = cartItem[i];
-        for (var key in cObj) {
-            alert(key);
-        }
+function addToCart(phoneItem) {
+    var itemId = this.dataset.itemId;
+    localStorage.setItem(itemId,itemId);
 
-    }
-    var cartItemJson = JSON.stringify(cartItem);
-    localStorage.setItem('Product', cartItemJson);
-    alert(localStorage.getItem('Product'));
+    return localStorage;
+
 }
 
 
