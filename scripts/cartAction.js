@@ -14,8 +14,11 @@ function showCartItems(){
         if (xhr.readyState != 4) return;
         var phoneResponse = JSON.parse(xhr.responseText);
 
+
+
         for (var key in phoneResponse){
-            if (key == localStorage.getItem(key)){
+
+            if (localStorage.getItem(key) == key){
 
                 var newItem = document.createElement('li'); //create li
                 newItem.className = 'widgets-list-item'; // assign class
@@ -61,10 +64,42 @@ function showCartItems(){
                     }
                 }
 
+                var prButtonWrap = document.createElement('div');
+                prButtonWrap.className = 'widgets-list-item-buttons-wrap btn-group clearfix';
+                newItem.appendChild(prButtonWrap);
+
+                var prButtonAdd = document.createElement('button');
+                prButtonAdd.className = 'delCartBut';
+                prButtonAdd.innerHTML = 'Delete';
+                prButtonAdd.dataset.itemId = key;
+                prButtonWrap.appendChild(prButtonAdd);
+
             }
+            delButton();
         }
     }
 
 
     xhr.send(null);
+
 }
+
+function delButton() {
+    var deleteCartButtonArray = document.getElementsByClassName('delCartBut');
+    for (var i = 0; i < deleteCartButtonArray.length; i++) {
+        deleteCartButtonArray[i].addEventListener('click', delFromCart, false);
+    }
+}
+
+function delFromCart(){
+    var itemId = this.dataset.itemId;
+    localStorage.removeItem(itemId);
+
+    var childNodes = list.childNodes;
+    for (var i=childNodes.length-1;i>=0;i--){
+        list.removeChild(childNodes[i]);
+    }
+
+    showCartItems();
+}
+

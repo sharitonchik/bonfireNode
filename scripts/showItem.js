@@ -120,7 +120,7 @@ function a() {
 }
 
 
-function addToCart(phoneItem) {
+function addToCart() {
     var itemId = this.dataset.itemId;
     localStorage.setItem(itemId,itemId);
 
