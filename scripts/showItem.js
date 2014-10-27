@@ -1,8 +1,10 @@
-
+<!--Global variable-->
 var list = document.getElementById('list_id');
 
-document.getElementById('find').addEventListener('click',sort,false);
+<!---->
 
+document.getElementById('find').addEventListener('click',sort,false);
+document.addEventListener('DOMContentLoaded',phoneItemShow,false);
 
 
 function sort(event){
@@ -38,7 +40,7 @@ function sort(event){
 
 }
 
-document.addEventListener('DOMContentLoaded',phoneItemShow,false);
+
 
 
 function phoneItemShow() {
@@ -120,13 +122,7 @@ function a() {
 }
 
 
-function addToCart() {
-    var itemId = this.dataset.itemId;
-    localStorage.setItem(itemId,itemId);
 
-    return localStorage;
-
-}
 
 
 

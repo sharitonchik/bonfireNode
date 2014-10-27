@@ -6,6 +6,7 @@ var list = document.getElementById('list_id');
 
 document.addEventListener('DOMContentLoaded',showCartItems,false);
 
+
 function showCartItems(){
 
     var xhr = new XMLHttpRequest();
@@ -76,6 +77,7 @@ function showCartItems(){
 
             }
             delButton();
+
         }
     }
 
@@ -84,22 +86,4 @@ function showCartItems(){
 
 }
 
-function delButton() {
-    var deleteCartButtonArray = document.getElementsByClassName('delCartBut');
-    for (var i = 0; i < deleteCartButtonArray.length; i++) {
-        deleteCartButtonArray[i].addEventListener('click', delFromCart, false);
-    }
-}
-
-function delFromCart(){
-    var itemId = this.dataset.itemId;
-    localStorage.removeItem(itemId);
-
-    var childNodes = list.childNodes;
-    for (var i=childNodes.length-1;i>=0;i--){
-        list.removeChild(childNodes[i]);
-    }
-
-    showCartItems();
-}
 
