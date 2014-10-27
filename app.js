@@ -21,7 +21,7 @@ function getPageRelatedPath(req, resp) {
     resp.sendfile(__dirname + '/pages' + req.path + '.html');
 }
 
-function getProductsDb(req, resp){
+function getProductsDb(req, resp) {
     var productsPath = '/db/products.json';
     console.log(req.method + ': ' + productsPath);
     resp.sendfile(__dirname + productsPath);
@@ -42,14 +42,14 @@ app.get('/phone', getPageRelatedPath);
 app.get('/login', getPageRelatedPath);
 app.get('/registration', getPageRelatedPath);
 
-app.get('/addProduct', function(req, resp){
+app.get('/addProduct', function (req, resp) {
     var db = fs.readFileSync('db/products.json', {
         encoding: 'utf8'
     });
 
     db = JSON.parse(db);
 
-    var params = url.parse(req.url,true).query;
+    var params = url.parse(req.url, true).query;
     console.log('req.params', params);
 
     var idPhone = params['id'];
@@ -61,7 +61,7 @@ app.get('/addProduct', function(req, resp){
     var pricePar = params['price'];
     var techPar = params['techInfo'];
 
-    function phoneInfoObj(titlePar,itemThumbImgUrlPar,shortDescPar,pricePar,techPar){
+    function phoneInfoObj(titlePar, itemThumbImgUrlPar, shortDescPar, pricePar, techPar) {
         this.itemTitle = titlePar;
         this.itemThumbImgUrl = itemThumbImgUrlPar;
         this.shortDescr = shortDescPar;
@@ -69,7 +69,7 @@ app.get('/addProduct', function(req, resp){
         this.techInfo = techPar;
     }
 
-    var phoneInfoObj = new phoneInfoObj(titlePar,itemThumbImgUrlPar,shortDescPar,pricePar,techPar);
+    var phoneInfoObj = new phoneInfoObj(titlePar, itemThumbImgUrlPar, shortDescPar, pricePar, techPar);
 
 
     db[idPhone] = phoneInfoObj;
@@ -86,23 +86,20 @@ app.get('/addProduct', function(req, resp){
     resp.end();
 });
 
-app.post = function (s, f) {
-
-
-};
-app.post('/auth', function(req, resp){
+app.post('/auth', function (req, resp) {
+    console.log('post');
     var dbLogin = fs.readFileSync('db/users.json', {
         encoding: 'utf8'
     });
 
+    console.log('dbLogin', dbLogin);
     dbLogin = JSON.parse(dbLogin);
 
-    var params = url.parse(req.url,true).query;
-    console.log('req.params', params);
+    var body = req.body;
+    console.log('body', body);
 
-    var userLogin = params['userLogin'];
-    params['userInfo'] = JSON.parse(params['userInfo']);
-    var userInfo = params['userInfo'];
+    var userLogin = body['login'];
+    var userInfo =  JSON.parse(body['userInfo']);
     dbLogin[userLogin] = userInfo;
 
 
@@ -113,10 +110,9 @@ app.post('/auth', function(req, resp){
             console.log('User saved');
         }
     });
-    resp.send(params);
+    resp.send('User saved');
     resp.end();
 });
-
 
 
 http.createServer(app).listen(8081, function () {

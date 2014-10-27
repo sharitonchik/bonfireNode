@@ -1,1 +1,10 @@
-{}
+{
+    "undefined": {
+        "password": "qwerty",
+        "email": "test@te.yh"
+    },
+    "test1": {
+        "password": "qwerty",
+        "email": "test@test.nu"
+    }
+}
