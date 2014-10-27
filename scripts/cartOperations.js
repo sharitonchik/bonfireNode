@@ -35,6 +35,6 @@ function delFromCart(){
         list.removeChild(childNodes[i]);
     }
     showCartCount();
-    
+
     showCartItems();
 }

@@ -86,6 +86,38 @@ app.get('/addProduct', function(req, resp){
     resp.end();
 });
 
+app.post = function (s, f) {
+
+
+};
+app.post('/auth', function(req, resp){
+    var dbLogin = fs.readFileSync('db/users.json', {
+        encoding: 'utf8'
+    });
+
+    dbLogin = JSON.parse(dbLogin);
+
+    var params = url.parse(req.url,true).query;
+    console.log('req.params', params);
+
+    var userLogin = params['userLogin'];
+    params['userInfo'] = JSON.parse(params['userInfo']);
+    var userInfo = params['userInfo'];
+    dbLogin[userLogin] = userInfo;
+
+
+    fs.writeFile('db/users.json', JSON.stringify(dbLogin, null, 4), function (err) {
+        if (err) {
+            console.log('err add', err);
+        } else {
+            console.log('User saved');
+        }
+    });
+    resp.send(params);
+    resp.end();
+});
+
+
 
 http.createServer(app).listen(8081, function () {
     console.log('Working http://localhost:8081/');

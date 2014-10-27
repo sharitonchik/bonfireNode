@@ -1,6 +1,8 @@
 /**
  * Created by Nastushka on 06.10.14.
  */
+document.getElementById('submit_id').addEventListener('click',addUserToFile,false);
+
 function CountLogin(item){
     var item_view = 'login_view'; // var for displaying count of elements
     var item_correct = 'login_correct'; // var for displaying message about error
@@ -114,6 +116,28 @@ function checkAll(){
     }
 }
 
-function hello(){
-    alert('hellow world');
+function addUserToFile(){
+
+    var userLogin = document.getElementById('login_id').value;
+    var userPassword = document.getElementById('pass_id').value;
+    var userEmail = document.getElementById('email_id').value;
+
+    function userUnfo(userPassword,userEmail){
+        this.password = userPassword;
+        this.email = userEmail;
+    }
+
+    var userInfo = new userUnfo(userPassword,userEmail);
+
+    var xhr = new XMLHttpRequest();
+    var params = 'login=' + encodeURIComponent(userLogin) + '&userInfo=' + JSON.stringify(userInfo);
+    xhr.open('POST','/auth',true);
+    xhr.setRequestHeader('Content-Type', 'application/x-www-form-urlencoded');
+    xhr.onreadystatechange = function() {
+        if (xhr.readyState != 4) return;
+        alert('hi');
+    }
+    xhr.send(params);
+
+
 }

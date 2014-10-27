@@ -85,5 +85,34 @@
                 "value": "smartphone"
             }
         }
+    },
+    "695742d3-f452-63b3-aff2-e47eb6cc1701": {
+        "itemTitle": "Lenovo",
+        "itemThumbImgUrl": "http://content2.onliner.by/catalog/device/icon/fd7ed5ea5b5d2eb51fac0fb0476144bd.jpg",
+        "shortDescr": "Android, экран 5\" IPS (720x1280), процессор 1200 МГц (4 ядр.), память 4 ГБ, аккумулятор 4000 мАч, 2 SIM",
+        "price": {
+            "min": "320",
+            "max": "200"
+        },
+        "techInfo": {
+            "thumbs": [
+                {
+                    "thumbURL": "sa",
+                    "fullSizeURL": "cds"
+                }
+            ],
+            "birthday": {
+                "title": "Production date",
+                "value": "2014"
+            },
+            "band": {
+                "title": "Standard connection",
+                "value": "band"
+            },
+            "mobile_type": {
+                "title": "Type",
+                "value": "smartphone"
+            }
+        }
     }
 }
