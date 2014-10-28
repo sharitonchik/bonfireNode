@@ -2,14 +2,18 @@
  * Created by Nastushka on 28.10.2014.
  */
 
-function setToLocalStorage(item){
+function LocalStorageObj(){
+    this.cartItem = [];
+}
+
+LocalStorageObj.prototype.get = function(key){
 
 }
 
-function getLocalStorageItem(item){
+LocalStorageObj.prototype.set = function(key,valu){
 
 }
 
-function remFromLocalStorage(item){
+LocalStorageObj.prototype.remove = function(key){
 
 }

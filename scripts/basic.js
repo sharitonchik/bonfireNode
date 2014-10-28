@@ -4,14 +4,23 @@
 
 var list = document.getElementById('list_id');
 
-function createItemWrap(){
+function newItemReturn(){
     var newItem = document.createElement('li'); //create li
+    newItem.id = 'newItem_id';
+    return newItem;
+}
+
+function createItemWrap(key){
+    var newItem = newItemReturn();
     newItem.className = 'widgets-list-item'; // assign class
     list.appendChild(newItem); //move li under ul
 
     var nameDiv = document.createElement('div'); // create div
     nameDiv.className = 'widgets-list-item-inner';
     newItem.appendChild(nameDiv);
+
+    var prButton = prButtonWrap(key);
+    newItem.appendChild(prButton);
 
     return nameDiv;
 }
@@ -38,4 +47,32 @@ function shortDescWtap(phoneItem,keyInner){
     prDescr.innerHTML = phoneItem[keyInner];
 
     return prDescr;
+}
+
+function priceWrap(newPrice,key1){
+    var prPrice = document.createElement('h4');
+    prPrice.className = 'header-main';
+    prPrice.innerHTML = newPrice[key1];
+
+    return prPrice;
+}
+
+function prButAdd(key){
+    var prButtonAdd = document.createElement('button');
+    prButtonAdd.className = 'addToCartButton';
+    prButtonAdd.innerHTML = 'Add to cart';
+    prButtonAdd.dataset.itemId = key;
+
+    return prButtonAdd;
+}
+
+function prButtonWrap(key){
+    var prButtonWrap = document.createElement('div');
+    prButtonWrap.className = 'widgets-list-item-buttons-wrap btn-group clearfix';
+
+    var prButtonAdd = prButAdd(key);
+
+    prButtonWrap.appendChild(prButtonAdd);
+
+    return prButtonWrap;
 }
