@@ -90,14 +90,17 @@ function saveChanges(){
 
 
     function phoneInfoObj(itemTitle,itemThumbImgUrl,shortDescr,price,techInfo){
-        this.itemTitle = itemTitle;
-        this.itemThumbImgUrl = itemThumbImgUrl;
-        this.shortDescr = shortDescr;
-        this.price = price;
-        this.techInfo = techInfo;
+        return {
+            itemTitle : itemTitle,
+            itemThumbImgUrl : itemThumbImgUrl,
+            shortDescr : shortDescr,
+            price : price,
+            techInfo : techInfo
+        }
     }
 
-    var phoneInfoObj = new phoneInfoObj(itemTitleValue,itemThumbImgUrlValue,shortDescrValue,priceObj,techInfoObj);
+
+    var phoneInfoObj = phoneInfoObj(itemTitleValue,itemThumbImgUrlValue,shortDescrValue,priceObj,techInfoObj);
 
 
     var guid = (function() {

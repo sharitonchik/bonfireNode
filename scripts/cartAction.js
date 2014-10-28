@@ -6,6 +6,14 @@ var list = document.getElementById('list_id');
 
 document.addEventListener('DOMContentLoaded',showCartItems,false);
 
+function a (){
+    var newItem = document.createElement('li'); //create li
+    newItem.className = 'widgets-list-item'; // assign class
+    list.appendChild(newItem); //move li under ul
+    var nameDiv = document.createElement('div'); // crete div1
+    nameDiv.className = 'widgets-list-item-inner';
+    newItem.appendChild(nameDiv);
+}
 
 function showCartItems(){
 
@@ -15,18 +23,13 @@ function showCartItems(){
         if (xhr.readyState != 4) return;
         var phoneResponse = JSON.parse(xhr.responseText);
 
-
+        a();
 
         for (var key in phoneResponse){
 
             if (localStorage.getItem(key) == key){
 
-                var newItem = document.createElement('li'); //create li
-                newItem.className = 'widgets-list-item'; // assign class
-                list.appendChild(newItem); //move li under ul
-                var nameDiv = document.createElement('div'); // crete div1
-                nameDiv.className = 'widgets-list-item-inner';
-                newItem.appendChild(nameDiv);
+
 
                 var phoneItem = phoneResponse[key];
 
@@ -72,7 +75,7 @@ function showCartItems(){
                 var prButtonAdd = document.createElement('button');
                 prButtonAdd.className = 'delCartBut';
                 prButtonAdd.innerHTML = 'Delete';
-                prButtonAdd.dataset.itemId = key;
+                prButtonAdd.dataset.itemId = key; // token
                 prButtonWrap.appendChild(prButtonAdd);
 
             }

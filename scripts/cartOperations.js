@@ -6,7 +6,10 @@ document.addEventListener('DOMContentLoaded',showCartCount,false);
 
 function addToCart() {
     var itemId = this.dataset.itemId;
-    localStorage.setItem(itemId,itemId);
+    var cartItems = [];
+
+    localStorage.setItem('cart',cartItems.push(itemId));
+
     showCartCount();
 
     return localStorage;

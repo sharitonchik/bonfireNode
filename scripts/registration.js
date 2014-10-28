@@ -135,9 +135,13 @@ function addUserToFile(){
     xhr.setRequestHeader('Content-Type', 'application/x-www-form-urlencoded');
     xhr.onreadystatechange = function() {
         if (xhr.readyState != 4) return;
-        alert('hi');
+        var userId = xhr.responseText;
+        alert(xhr.responseText);
+        localStorage.setItem(userLogin,userId);
     }
+
     xhr.send(params);
 
 
 }
+

@@ -100,8 +100,22 @@ app.post('/auth', function (req, resp) {
 
     var userLogin = body['login'];
     var userInfo =  JSON.parse(body['userInfo']);
+
     dbLogin[userLogin] = userInfo;
 
+    var guid = (function() {
+        function s4() {
+            return Math.floor((1 + Math.random()) * 0x10000)
+                .toString(16)
+                .substring(1);
+        }
+        return function() {
+            return s4() + s4() + '-' + s4() + '-' + s4() + '-' +
+                s4() + '-' + s4() + s4() + s4();
+        };
+    })();
+
+    var uuid = guid();
 
     fs.writeFile('db/users.json', JSON.stringify(dbLogin, null, 4), function (err) {
         if (err) {
@@ -110,7 +124,7 @@ app.post('/auth', function (req, resp) {
             console.log('User saved');
         }
     });
-    resp.send('User saved');
+    resp.send(uuid);
     resp.end();
 });
 
