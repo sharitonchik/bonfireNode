@@ -114,5 +114,34 @@
                 "value": "smartphone"
             }
         }
+    },
+    "463288cd-c43f-fb03-27da-d597da53fa00": {
+        "itemTitle": "Sumsung",
+        "itemThumbImgUrl": "http://content2.onliner.by/catalog/device/icon/f3da8a44132baaafc1b3e18b12afaca7.jpg",
+        "shortDescr": "Android, экран 5\" IPS (1080x1920), процессор 2260 МГц (4 ядр.), память 16 ГБ, аккумулятор 2300 мАч,",
+        "price": {
+            "min": "222",
+            "max": "433"
+        },
+        "techInfo": {
+            "thumbs": [
+                {
+                    "thumbURL": "vsd",
+                    "fullSizeURL": "sdvc"
+                }
+            ],
+            "birthday": {
+                "title": "Production date",
+                "value": "2013"
+            },
+            "band": {
+                "title": "Standard connection",
+                "value": "fdsv"
+            },
+            "mobile_type": {
+                "title": "Type",
+                "value": "smartphone"
+            }
+        }
     }
 }

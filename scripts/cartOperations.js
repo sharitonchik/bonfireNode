@@ -4,22 +4,22 @@
 
 document.addEventListener('DOMContentLoaded',showCartCount,false);
 
-function addToCart() {
-    var itemId = this.dataset.itemId;
-    var cartItems = [];
+var cart = new LocalStorageObj();
 
-    localStorage.setItem('cart',cartItems.push(itemId));
+function addToCart() {
+
+    var itemId = this.dataset.itemId;
+    var newArray = [];
+    newArray.push(itemId);
+    cart.set('cart',JSON.stringify(newArray),'array');
 
     showCartCount();
-
-    return localStorage;
-
 }
 
 function showCartCount() {
 
     var cartCount = document.getElementById('cartCountId');
-    cartCount.innerHTML = localStorage.length;
+    //cartCount.innerHTML = localStorage.length;
 }
 
 function delButton() {
