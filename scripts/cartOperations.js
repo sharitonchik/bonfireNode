@@ -9,9 +9,7 @@ var cart = new LocalStorageObj();
 function addToCart() {
 
     var itemId = this.dataset.itemId;
-    var newArray = [];
-    newArray.push(itemId);
-    cart.set('cart',JSON.stringify(newArray),'array');
+    cart.set('cart', itemId, 'array');
 
     showCartCount();
 }
