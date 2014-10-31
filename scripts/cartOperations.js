@@ -10,9 +10,10 @@ function addToCart() {
 
     var itemId = this.dataset.itemId;
     //cart.set('cart',itemId,'array');
-    //cart.set('user',{'na':'89'},'object',itemId);
+    //cart.set('user',{age:'34',height:'170'},'object',itemId);
     //cart.set('user','test','object',itemId);
-   cart.removeArrayValue('cart',itemId);
+   //cart.removeArrayValue('cart',itemId);
+    cart.removeObjectValue('user',{age:'34',height:'170'})
     showCartCount();
 }
 

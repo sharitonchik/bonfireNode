@@ -1,8 +1,23 @@
 function LocalStorageObj(){}
 
 LocalStorageObj.prototype.get = function(key){
+    this.getArrayValue(key);
 
 }
+
+LocalStorageObj.prototype.get = function (key) {
+
+    var storageValue = localStorage.getItem(key);
+
+    try{
+        storageValue = JSON.parse(storageValue);
+        return storageValue;
+    }
+    catch (e){
+        return storageValue;
+    }
+
+};
 
 LocalStorageObj.prototype.set = function(key,value,type,keyObj){
     switch (type){
@@ -101,13 +116,27 @@ LocalStorageObj.prototype.addStringValue = function (key, value) {
 LocalStorageObj.prototype.remove = function(key,value,type){
     switch (type){
         case 'array':
-            this.removeArrayValue();
+            this.removeArrayValue(key,value);
             break;
+        case 'object':
+            this.removeObjectValue(key,value);
+            break;
+        default :
+            this.removeStringValue(key);
     }
 };
 
 LocalStorageObj.prototype.removeArrayValue = function(key,value){
     var storageValue = localStorage.getItem(key);
+
+    if(typeof value == "object" && value.length && value.length > 0){
+        localStorage.removeItem(key);
+        return;
+    }
+
+    if(!storageValue){
+        return;
+    }
 
     try{
         storageValue = JSON.parse(storageValue);
@@ -121,12 +150,41 @@ LocalStorageObj.prototype.removeArrayValue = function(key,value){
         localStorage.setItem(key,JSON.stringify(storageValue));
     }
     catch (e){
-        alert('byby');
+        return;
+    }
+};
+
+LocalStorageObj.prototype.removeObjectValue = function(key,value){
+    var storageValue = localStorage.getItem(key);
+
+    if(typeof value == 'object' && !(isEmpty(value))){
+        localStorage.removeItem(key);
+        return;
     }
 
+    if(!storageValue){
 
+        return;
+    }
 
+    try {
+        storageValue = JSON.parse(storageValue);
+        if(!(isEmpty(storageValue))) {
+            for(var k in storageValue){
+                if (k = value){
+                    delete storageValue[k];
+                }
+            }
+            localStorage.setItem(key, JSON.stringify(storageValue));
+        } else {
+            localStorage.removeItem(key);
+        }
+    } catch (e) {
+        localStorage.removeItem(key);
+    }
 
+};
 
-
-}
+LocalStorageObj.prototype.removeStringValue = function(key){
+    localStorage.removeItem(key);
+};
