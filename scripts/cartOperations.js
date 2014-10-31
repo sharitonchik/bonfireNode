@@ -9,9 +9,10 @@ var cart = new LocalStorageObj();
 function addToCart() {
 
     var itemId = this.dataset.itemId;
-      //  cart.set('cart',itemId,'array');
-    cart.set('user',{name:'sasa'},'object',itemId);
-    //cart.set('user',{name:'petya',age:"26"},'object',itemId);
+    //cart.set('cart',itemId,'array');
+    //cart.set('user',{'na':'89'},'object',itemId);
+    //cart.set('user','test','object',itemId);
+   cart.removeArrayValue('cart',itemId);
     showCartCount();
 }
 
