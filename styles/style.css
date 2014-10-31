@@ -1290,6 +1290,7 @@ h4, h5, h6,p,ul,li,h2,h3{
 
 .phone-image{
     display: block;
+    min-height: 150px;
 }
 
 .product-view{
@@ -1401,4 +1402,8 @@ h4, h5, h6,p,ul,li,h2,h3{
     display: block;
     margin: 5px;
     width: 180px;
+}
+
+.phone-desc-wrap{
+    min-height: 60px;
 }

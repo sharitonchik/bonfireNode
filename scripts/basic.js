@@ -43,8 +43,9 @@ function itemTitleWrap(phoneItem,keyInner){
 
 function shortDescWtap(phoneItem,keyInner){
     var prDescr = document.createElement('p');
-    prDescr.className = 'p-main';
-    prDescr.innerHTML = phoneItem[keyInner];
+    prDescr.className = 'p-main phone-desc-wrap';
+    var strDesc = truncate(phoneItem[keyInner],60)
+    prDescr.innerHTML = strDesc;
 
     return prDescr;
 }
@@ -75,4 +76,12 @@ function prButtonWrap(key){
     prButtonWrap.appendChild(prButtonAdd);
 
     return prButtonWrap;
+}
+
+function truncate(str, maxlength) {
+    if (str.length > maxlength) {
+        return str.slice(0, maxlength - 1) + '…';
+    }
+
+    return str;
 }
