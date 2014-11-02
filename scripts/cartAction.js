@@ -13,44 +13,47 @@ function showCartItems(){
     xhr.open('GET', '/getProducts', true);
     xhr.onreadystatechange = function () {
         if (xhr.readyState != 4) return;
-        var phoneResponse = JSON.parse(xhr.responseText);
 
-        var nameDiv = createItemWrap(key);
+        var phoneResponse = JSON.parse(xhr.responseText);
 
         for (var key in phoneResponse){
 
-            if (localStorage.getItem(key) == key){
+            var savedItems = cart.get('cart');
 
-                var phoneItem = phoneResponse[key];
+            for(var i=0;i<savedItems.length;i++){
+                if(savedItems[i] == key){
+                    var phoneItem = phoneResponse[key];
 
-                for (var keyInner in phoneItem){
+                    var nameDiv = createItemWrap(key);
 
-                    if (keyInner == 'itemTitle') {
-                        var prName = itemTitleWrap(phoneItem,keyInner);
-                        nameDiv.appendChild(prName);
-                    }
+                    for (var keyInner in phoneItem){
 
-                    if (keyInner == 'itemThumbImgUrl') {
-                        var prImage = imgWrap(phoneItem,keyInner);
-                        nameDiv.insertBefore(prImage, prName);
-                    }
-
-                    if (keyInner == 'shortDescr') {
-                        var prDescr = shortDescWtap(phoneItem,keyInner);
-                        nameDiv.appendChild(prDescr);
-                    }
-
-                    if (keyInner == 'price') {
-                        var newPrice = phoneItem[keyInner];
-                        for (var key1 in newPrice) {
-                            var prPrice = priceWrap(newPrice,key1);
-                            nameDiv.insertBefore(prPrice, prDescr);
+                        if (keyInner == 'itemTitle') {
+                            var prName = itemTitleWrap(phoneItem,keyInner);
+                            nameDiv.appendChild(prName);
                         }
+
+                        if (keyInner == 'itemThumbImgUrl') {
+                            var prImage = imgWrap(phoneItem,keyInner);
+                            nameDiv.insertBefore(prImage, prName);
+                        }
+
+                        if (keyInner == 'shortDescr') {
+                            var prDescr = shortDescWtap(phoneItem,keyInner);
+                            nameDiv.appendChild(prDescr);
+                        }
+
+                        if (keyInner == 'price') {
+                            var newPrice = phoneItem[keyInner];
+                            for (var key1 in newPrice) {
+                                var prPrice = priceWrap(newPrice,key1);
+                                nameDiv.insertBefore(prPrice, prDescr);
+                            }
+                        }
+                        delButton();
                     }
                 }
             }
-            delButton();
-
         }
     }
 

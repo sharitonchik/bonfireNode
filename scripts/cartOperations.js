@@ -4,29 +4,30 @@
 
 document.addEventListener('DOMContentLoaded',showCartCount,false);
 
-var cart = new LocalStorageObj();
+
 
 function addToCart() {
 
     var itemId = this.dataset.itemId;
-    //cart.set('cart',itemId,'array');
-    //cart.set('user',{age:'34',height:'170'},'object',itemId);
-    //cart.set('user','test','object',itemId);
-   //cart.removeArrayValue('cart',itemId);
-    cart.removeObjectValue('user',{age:'34',height:'170'})
+    cart.set('cart',itemId,'array');
     showCartCount();
+    this.innerHTML = 'added';
+    this.disabled = true;
+
 }
 
 function showCartCount() {
-
     var cartCount = document.getElementById('cartCountId');
-    //cartCount.innerHTML = localStorage.length;
+    var cartLenght = cart.showLenght('cart');
+    cartCount.innerHTML = cartLenght;
+
 }
 
 function delButton() {
-    var deleteCartButtonArray = document.getElementsByClassName('delCartBut');
+    var deleteCartButtonArray = document.getElementsByClassName('addToCartButton');
     for (var i = 0; i < deleteCartButtonArray.length; i++) {
         deleteCartButtonArray[i].addEventListener('click', delFromCart, false);
+        deleteCartButtonArray[i].innerHTML = 'Delete';
     }
 }
 

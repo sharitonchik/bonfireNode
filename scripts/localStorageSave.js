@@ -1,9 +1,5 @@
 function LocalStorageObj(){}
 
-LocalStorageObj.prototype.get = function(key){
-    this.getArrayValue(key);
-
-}
 
 LocalStorageObj.prototype.get = function (key) {
 
@@ -19,13 +15,13 @@ LocalStorageObj.prototype.get = function (key) {
 
 };
 
-LocalStorageObj.prototype.set = function(key,value,type,keyObj){
+LocalStorageObj.prototype.set = function(key,value,type){
     switch (type){
         case 'array':
             this.addArrayValue(key, value);
             break;
         case 'object':
-            this.addObjectValue(key,value,keyObj);
+            this.addObjectValue(key,value);
             break;
         default: this.addStringValue(key, value);
             break;
@@ -40,36 +36,20 @@ function isEmpty(obj) {
     return true;
 }
 
-LocalStorageObj.prototype.addObjectValue = function (key,value,keyObj){
-
-    var newItemObjAdd = function(k,val,keyObj){
-        var obj = {};
-        obj[keyObj] = value;
-        localStorage.setItem(k,JSON.stringify(obj));
-    }
-
-    var storageValue = localStorage.getItem(key);
+LocalStorageObj.prototype.addObjectValue = function (key,value){
 
     if(typeof value == 'object' && !(isEmpty(value))){
+
         localStorage.setItem(key, JSON.stringify(value));
         return;
     }
-
-    if(!storageValue){
-        newItemObjAdd(key,value,keyObj);
+    else if(typeof value == 'string'){
+        localStorage.setItem(key, value);
         return;
     }
-
-    try {
-        storageValue = JSON.parse(storageValue);
-        if(!(isEmpty(storageValue))) {
-            storageValue[keyObj] = value;
-            localStorage.setItem(key, JSON.stringify(storageValue));
-        } else {
-            newItemObjAdd(key,value,keyObj);
-        }
-    } catch (e) {
-        newItemObjAdd(key,value,keyObj);
+    else{
+        localStorage.setItem(key, JSON.stringify(value));
+        return;
     }
 
 }
@@ -145,7 +125,6 @@ LocalStorageObj.prototype.removeArrayValue = function(key,value){
             if(storageValue[i] == value){
                 storageValue.splice(i,1);
             }
-
         }
         localStorage.setItem(key,JSON.stringify(storageValue));
     }
@@ -155,6 +134,7 @@ LocalStorageObj.prototype.removeArrayValue = function(key,value){
 };
 
 LocalStorageObj.prototype.removeObjectValue = function(key,value){
+
     var storageValue = localStorage.getItem(key);
 
     if(typeof value == 'object' && !(isEmpty(value))){
@@ -163,7 +143,6 @@ LocalStorageObj.prototype.removeObjectValue = function(key,value){
     }
 
     if(!storageValue){
-
         return;
     }
 
@@ -188,3 +167,26 @@ LocalStorageObj.prototype.removeObjectValue = function(key,value){
 LocalStorageObj.prototype.removeStringValue = function(key){
     localStorage.removeItem(key);
 };
+
+LocalStorageObj.prototype.showLenght = function(key){
+
+    var storageValue = localStorage.getItem(key);
+
+    if(!storageValue){
+        return 0;
+    }
+
+    try{
+        storageValue = JSON.parse(storageValue);
+
+        if(typeof storageValue == "object" && storageValue.length && storageValue.length > 0){
+
+            return storageValue.length;
+        }
+    }
+    catch (e){
+        return;
+    }
+}
+
+var cart = new LocalStorageObj();
