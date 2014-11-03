@@ -11,9 +11,8 @@ function addToCart() {
     var itemId = this.dataset.itemId;
     cart.set('cart',itemId,'array');
     showCartCount();
-    this.innerHTML = 'added';
-    this.disabled = true;
-
+    //this.innerHTML = 'Added';
+    checkDelBut();
 }
 
 function showCartCount() {
@@ -33,13 +32,10 @@ function delButton() {
 
 function delFromCart(){
     var itemId = this.dataset.itemId;
-    localStorage.removeItem(itemId);
-
-    var childNodes = list.childNodes;
-    for (var i=childNodes.length-1;i>=0;i--){
-        list.removeChild(childNodes[i]);
-    }
+    cart.remove('cart',itemId,'array');
     showCartCount();
-
+    clearList();
     showCartItems();
 }
+
+

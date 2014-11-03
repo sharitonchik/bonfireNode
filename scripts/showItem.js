@@ -1,6 +1,7 @@
 
 document.getElementById('find').addEventListener('click',sort,false);
 document.addEventListener('DOMContentLoaded',phoneItemShow,false);
+document.addEventListener('DOMContentLoaded',checkDelBut,false);
 
 
 function sort(event){
@@ -77,9 +78,11 @@ function phoneItemShow() {
 
                 }
             }
+            checkDelBut(key);
         }
 
         addListenerToAddButton();
+
     }
 
     xhr.send(null);

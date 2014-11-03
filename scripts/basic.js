@@ -11,6 +11,7 @@ function newItemReturn(){
 }
 
 function createItemWrap(key){
+
     var newItem = newItemReturn();
     newItem.className = 'widgets-list-item'; // assign class
     list.appendChild(newItem); //move li under ul
@@ -64,10 +65,14 @@ function prButAdd(key){
     prButtonAdd.innerHTML = 'Add to cart';
     prButtonAdd.dataset.itemId = key;
 
+
+
     return prButtonAdd;
 }
 
 function prButtonWrap(key){
+
+
     var prButtonWrap = document.createElement('div');
     prButtonWrap.className = 'widgets-list-item-buttons-wrap btn-group clearfix';
 
@@ -84,4 +89,26 @@ function truncate(str, maxlength) {
     }
 
     return str;
+}
+
+function clearList(){
+
+    var childNodes = list.childNodes;
+    for (var i=childNodes.length-1;i>=0;i--){
+        list.removeChild(childNodes[i]);
+    }
+
+}
+
+function checkDelBut(key){
+    var c = cart.get('cart');
+    var b = document.getElementsByClassName('addToCartButton');
+    for (var i=0;i< c.length;i++){
+        for (var j=0;j< b.length;j++){
+            if (b[j].dataset.itemId == c[i]){
+                b[j].disabled = true;
+                b[j].innerHTML = 'Added';
+            }
+        }
+    }
 }
