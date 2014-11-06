@@ -19,6 +19,7 @@ function fileSend(req, resp) {
 function getPageRelatedPath(req, resp) {
     console.log(req.method + ': ' + req.path);
     resp.sendfile(__dirname + '/pages' + req.path + '.html');
+
 }
 
 function getProductsDb(req, resp) {
@@ -39,6 +40,54 @@ app.get('/styles/*', fileSend);
 
 app.get('/getProducts', getProductsDb);
 app.get('/phone', getPageRelatedPath);
+app.get('/display', function (req, resp){
+
+    var db = fs.readFileSync('db/products.json', {
+        encoding: 'utf8'
+    });
+
+    db = JSON.parse(db);
+
+    var params = url.parse(req.url, true).query;
+    console.log('req.params', params);
+
+    var username = params['userLogin'];
+    var token = params['userToken'];
+
+    var count = 0;
+
+    for (var key in db){
+        if (key == username){
+            console.log('0');
+            count++;
+            if (db[key] == token){
+                console.log('1');
+                return;
+            }
+        }
+        else{
+            console.log('2');
+            console.log('count=',count);
+        }
+    }
+
+    if (count=0){
+        resp.redirect('/registration');
+        console.log('not logged');
+    }
+    else{
+        resp.redirect('/cart');
+        console.log('logged');
+    }
+
+
+    resp.send();
+    resp.end();
+
+});
+
+
+app.get('/cart', getPageRelatedPath);
 app.get('/login', getPageRelatedPath);
 app.get('/registration', getPageRelatedPath);
 
@@ -56,9 +105,9 @@ app.get('/addProduct', function (req, resp) {
     var titlePar = params['itemTitle'];
     var itemThumbImgUrlPar = params['itemThumbImgUrl'];
     var shortDescPar = params['shortDesc'];
-    params['price'] = JSON.parse(params['price']);
+   // params['price'] = JSON.parse(params['price']);
     params['techInfo'] = JSON.parse(params['techInfo']);
-    var pricePar = params['price'];
+    var pricePar = JSON.parse(params['price']);
     var techPar = params['techInfo'];
 
     function phoneInfoObj(titlePar, itemThumbImgUrlPar, shortDescPar, pricePar, techPar) {
@@ -71,9 +120,7 @@ app.get('/addProduct', function (req, resp) {
 
     var phoneInfoObj = new phoneInfoObj(titlePar, itemThumbImgUrlPar, shortDescPar, pricePar, techPar);
 
-
     db[idPhone] = phoneInfoObj;
-
 
     fs.writeFile('db/products.json', JSON.stringify(db, null, 4), function (err) {
         if (err) {
@@ -85,6 +132,8 @@ app.get('/addProduct', function (req, resp) {
     resp.send(params);
     resp.end();
 });
+
+
 
 app.post('/auth', function (req, resp) {
     console.log('post');
@@ -101,8 +150,6 @@ app.post('/auth', function (req, resp) {
     var userLogin = body['login'];
     var userInfo =  JSON.parse(body['userInfo']);
 
-    dbLogin[userLogin] = userInfo;
-
     var guid = (function() {
         function s4() {
             return Math.floor((1 + Math.random()) * 0x10000)
@@ -117,6 +164,11 @@ app.post('/auth', function (req, resp) {
 
     var uuid = guid();
 
+    userInfo.userToken = uuid;
+
+    dbLogin[userLogin] = userInfo;
+
+
     fs.writeFile('db/users.json', JSON.stringify(dbLogin, null, 4), function (err) {
         if (err) {
             console.log('err add', err);
@@ -124,6 +176,8 @@ app.post('/auth', function (req, resp) {
             console.log('User saved');
         }
     });
+
+
     resp.send(uuid);
     resp.end();
 });

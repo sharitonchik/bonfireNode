@@ -1,22 +1,12 @@
 {
-    "undefined": {
-        "password": "qwerty",
-        "email": "test@te.yh"
-    },
-    "test1": {
-        "password": "qwerty",
-        "email": "test@test.nu"
-    },
     "ahrytsuk": {
-        "password": "nastyapassword1",
-        "email": "natikana_@mail.ru"
-    },
-    "vavavav": {
         "password": "12345",
-        "email": "na21@mail.ru"
+        "email": "na68@mail.ru",
+        "userToken": "74451f38-a683-e9ad-2faf-823eadb85b59"
     },
-    "passa": {
+    "slava": {
         "password": "12345",
-        "email": "na20@mail.ru"
+        "email": "na17@mail.ru",
+        "userToken": "6f09ba43-26be-4c8e-7c29-1c310ef8ed13"
     }
 }

@@ -1,109 +1,22 @@
 {
-    "b130ab5b-5be2-ae69-4e67-76a8a384b219": {
-        "itemTitle": "cvc z",
-        "itemThumbImgUrl": "http://content2.onliner.by/catalog/device/icon/57769fe8842b9796743affbee5a53c06.jpg",
-        "shortDescr": "v xcv",
+    "27174afb-1101-cd49-0c66-35e36378077e": {
+        "itemTitle": "apple",
+        "itemThumbImgUrl": "http://content2.onliner.by/catalog/device/100/dd233397f9290d8574bf0b924398bada.jpg",
+        "shortDescr": "Android, экран 4.7 ",
         "price": {
-            "min": "88",
-            "max": "87"
+            "min": "89",
+            "max": "90"
         },
         "techInfo": {
             "thumbs": [
                 {
-                    "thumbURL": "vsdv",
-                    "fullSizeURL": "vsdf"
+                    "thumbURL": "ww",
+                    "fullSizeURL": "ww"
                 }
             ],
             "birthday": {
                 "title": "Production date",
                 "value": "2012"
-            },
-            "band": {
-                "title": "Standard connection",
-                "value": "vsd"
-            },
-            "mobile_type": {
-                "title": "Type",
-                "value": "vsdfv"
-            }
-        }
-    },
-    "fd096ba6-1a73-0897-2997-a59c0fb40d61": {
-        "itemTitle": "sVDf",
-        "itemThumbImgUrl": "http://content2.onliner.by/catalog/device/icon/bda207373d2d4afbb446d6998814a3a0.jpg",
-        "shortDescr": "Android, экран 5\" IPS (1080x1920), процессор 2260 МГц (4 ядр.), память 16 ГБ, аккумулятор 2300 мАч",
-        "price": {
-            "min": "55",
-            "max": "89"
-        },
-        "techInfo": {
-            "thumbs": [
-                {
-                    "thumbURL": "vbsf",
-                    "fullSizeURL": "bdsf"
-                }
-            ],
-            "birthday": {
-                "title": "Production date",
-                "value": "23"
-            },
-            "band": {
-                "title": "Standard connection",
-                "value": "gfs"
-            },
-            "mobile_type": {
-                "title": "Type",
-                "value": "gvsfd"
-            }
-        }
-    },
-    "4625ecad-bc1b-0538-b6ab-a53f48cd9ec0": {
-        "itemTitle": "phone",
-        "itemThumbImgUrl": "http://content2.onliner.by/catalog/device/100/5c89a202887278d66e83e9ea119a537d.jpg",
-        "shortDescr": "lal",
-        "price": {
-            "min": "300",
-            "max": "200"
-        },
-        "techInfo": {
-            "thumbs": [
-                {
-                    "thumbURL": "cvs",
-                    "fullSizeURL": "vsdv"
-                }
-            ],
-            "birthday": {
-                "title": "Production date",
-                "value": "2013"
-            },
-            "band": {
-                "title": "Standard connection",
-                "value": "csd"
-            },
-            "mobile_type": {
-                "title": "Type",
-                "value": "smartphone"
-            }
-        }
-    },
-    "695742d3-f452-63b3-aff2-e47eb6cc1701": {
-        "itemTitle": "Lenovo",
-        "itemThumbImgUrl": "http://content2.onliner.by/catalog/device/icon/fd7ed5ea5b5d2eb51fac0fb0476144bd.jpg",
-        "shortDescr": "Android, экран 5\" IPS (720x1280), процессор 1200 МГц (4 ядр.), память 4 ГБ, аккумулятор 4000 мАч, 2 SIM",
-        "price": {
-            "min": "320",
-            "max": "200"
-        },
-        "techInfo": {
-            "thumbs": [
-                {
-                    "thumbURL": "sa",
-                    "fullSizeURL": "cds"
-                }
-            ],
-            "birthday": {
-                "title": "Production date",
-                "value": "2014"
             },
             "band": {
                 "title": "Standard connection",
@@ -115,32 +28,61 @@
             }
         }
     },
-    "463288cd-c43f-fb03-27da-d597da53fa00": {
-        "itemTitle": "Sumsung",
-        "itemThumbImgUrl": "http://content2.onliner.by/catalog/device/icon/f3da8a44132baaafc1b3e18b12afaca7.jpg",
-        "shortDescr": "Android, экран 5\" IPS (1080x1920), процессор 2260 МГц (4 ядр.), память 16 ГБ, аккумулятор 2300 мАч,",
+    "0cf911b8-c256-8186-73f5-06f2e007d596": {
+        "itemTitle": "rew",
+        "itemThumbImgUrl": "http://content2.onliner.by/catalog/device/100/dd233397f9290d8574bf0b924398bada.jpg",
+        "shortDescr": "adv",
         "price": {
-            "min": "222",
-            "max": "433"
+            "min": "43",
+            "max": "22"
         },
         "techInfo": {
             "thumbs": [
                 {
-                    "thumbURL": "vsd",
-                    "fullSizeURL": "sdvc"
+                    "thumbURL": "cAS",
+                    "fullSizeURL": "CVAS"
                 }
             ],
             "birthday": {
                 "title": "Production date",
-                "value": "2013"
+                "value": "2012"
             },
             "band": {
                 "title": "Standard connection",
-                "value": "fdsv"
+                "value": "cad"
             },
             "mobile_type": {
                 "title": "Type",
-                "value": "smartphone"
+                "value": "vca"
+            }
+        }
+    },
+    "ab133b2b-87fe-09bd-4188-8f3fd224c394": {
+        "itemTitle": "telephone",
+        "itemThumbImgUrl": "http://content2.onliner.by/catalog/device/icon/57769fe8842b9796743affbee5a53c06.jpg",
+        "shortDescr": "FF",
+        "price": {
+            "min": "34",
+            "max": "33"
+        },
+        "techInfo": {
+            "thumbs": [
+                {
+                    "thumbURL": "c ",
+                    "fullSizeURL": "v czxd"
+                }
+            ],
+            "birthday": {
+                "title": "Production date",
+                "value": "2012"
+            },
+            "band": {
+                "title": "Standard connection",
+                "value": "DCAS"
+            },
+            "mobile_type": {
+                "title": "Type",
+                "value": "C ZX"
             }
         }
     }

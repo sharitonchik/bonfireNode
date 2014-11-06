@@ -136,8 +136,11 @@ function addUserToFile(){
     xhr.onreadystatechange = function() {
         if (xhr.readyState != 4) return;
         var userId = xhr.responseText;
-        alert(xhr.responseText);
-        localStorage.setItem(userLogin,userId);
+
+        var userObj = {};
+        userObj[userLogin] = userId;
+        users.set('user',userObj,'object');
+
     }
 
     xhr.send(params);

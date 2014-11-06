@@ -190,3 +190,4 @@ LocalStorageObj.prototype.showLenght = function(key){
 }
 
 var cart = new LocalStorageObj();
+var users = new LocalStorageObj();

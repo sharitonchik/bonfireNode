@@ -4,6 +4,8 @@
 
 var list = document.getElementById('list_id');
 
+//document.addEventListener('DOMContentLoaded',checkUser,false);
+
 function newItemReturn(){
     var newItem = document.createElement('li'); //create li
     newItem.id = 'newItem_id';
@@ -111,4 +113,10 @@ function checkDelBut(key){
             }
         }
     }
+}
+
+
+
+function checkUser1(){
+    window.location.assign('../pages/registration.html');
 }
