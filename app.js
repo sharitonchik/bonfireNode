@@ -42,7 +42,7 @@ app.get('/getProducts', getProductsDb);
 app.get('/phone', getPageRelatedPath);
 app.get('/display', function (req, resp){
 
-    var db = fs.readFileSync('db/products.json', {
+    var db = fs.readFileSync('db/users.json', {
         encoding: 'utf8'
     });
 
@@ -52,13 +52,16 @@ app.get('/display', function (req, resp){
     console.log('req.params', params);
 
     var username = params['userLogin'];
+    console.log(username)
     var token = params['userToken'];
+    console.log(token);
 
     var count = 0;
 
     for (var key in db){
+        console.log('db=',key);
         if (key == username){
-            console.log('0');
+            console.log('0=',key,username);
             count++;
             if (db[key] == token){
                 console.log('1');
@@ -66,22 +69,22 @@ app.get('/display', function (req, resp){
             }
         }
         else{
-            console.log('2');
+            console.log('2=',key,username);
             console.log('count=',count);
         }
     }
 
-    if (count=0){
+    if (count = 0){
         resp.redirect('/registration');
         console.log('not logged');
     }
     else{
-        resp.redirect('/cart');
+        resp.redirect('/');
         console.log('logged');
     }
 
 
-    resp.send();
+    //resp.send();
     resp.end();
 
 });
