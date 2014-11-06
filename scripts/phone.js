@@ -19,7 +19,10 @@ function checkUser(){
     xhr.open('GET', '/display?' + params, true);
     xhr.onreadystatechange = function() {
         if (xhr.readyState != 4) return;
-
+        var response = xhr.responseText;
+        response = JSON.parse(response);
+       
+        window.location = response.redirect;
 
     }
     xhr.send(null);

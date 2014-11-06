@@ -79,7 +79,9 @@ app.get('/display', function (req, resp){
         console.log('not logged');
     }
     else{
-        resp.redirect('/');
+        //resp.writeHead(302,{'Location':'/'});
+        //resp.redirect(200,'/');
+        resp.send({redirect:'/'});
         console.log('logged');
     }
 
