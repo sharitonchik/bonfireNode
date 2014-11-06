@@ -2,6 +2,7 @@
  * Created by Nastushka on 06.10.14.
  */
 document.getElementById('submit_id').addEventListener('click',addUserToFile,false);
+document.getElementById('submit_id').addEventListener('click',checkUser,false);
 
 function CountLogin(item){
     var item_view = 'login_view'; // var for displaying count of elements

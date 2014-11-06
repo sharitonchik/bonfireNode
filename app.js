@@ -74,8 +74,8 @@ app.get('/display', function (req, resp){
         }
     }
 
-    if (count = 0){
-        resp.redirect('/registration');
+    if (count == 0){
+        resp.send({redirect:'/registration'});
         console.log('not logged');
     }
     else{

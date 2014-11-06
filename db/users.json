@@ -8,5 +8,25 @@
         "password": "12345",
         "email": "na17@mail.ru",
         "userToken": "6f09ba43-26be-4c8e-7c29-1c310ef8ed13"
+    },
+    "hanna": {
+        "password": "12345",
+        "email": "na96@mail.ru",
+        "userToken": "f078f8be-515b-518c-495c-625192537145"
+    },
+    "totot": {
+        "password": "12345",
+        "email": "na86@mail.ru",
+        "userToken": "d970d932-05f9-dc77-4ed9-48688ea25809"
+    },
+    "hahaha": {
+        "password": "12345",
+        "email": "na26@mail.ru",
+        "userToken": "9e7f50e9-fdf2-5409-ce78-f2ed6a3b47de"
+    },
+    "redg7": {
+        "password": "12345",
+        "email": "na06@mail.ru",
+        "userToken": "3fae8efc-a33d-259b-ff2f-758947b139db"
     }
 }
