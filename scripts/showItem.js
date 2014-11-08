@@ -40,14 +40,7 @@ function sort(event){
 
 function phoneItemShow() {
 
-    var storageValue = users.get('user');
-
-    for (var key in storageValue){
-        var userLogin = key;
-        var userToken = storageValue[key];
-    }
-
-    var params = 'userLogin=' + encodeURIComponent(userLogin) + '&userToken=' + encodeURIComponent(userToken);
+    var params = sentUser();
 
     var xhr = new XMLHttpRequest();
     xhr.open('GET', '/phoneAccess?' + params, true);
@@ -60,6 +53,7 @@ function phoneItemShow() {
         }
         else{
             var respProd = phoneResponse.path;
+
             for (var key in respProd){
 
                 var nameDiv = createItemWrap(key);

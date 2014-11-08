@@ -1,6 +1,9 @@
 function LocalStorageObj(){}
 
 
+var cart = new LocalStorageObj();
+var users = new LocalStorageObj();
+
 LocalStorageObj.prototype.get = function (key) {
 
     var storageValue = localStorage.getItem(key);
@@ -191,6 +194,3 @@ LocalStorageObj.prototype.showLenght = function(key){
         return 0;
     }
 }
-
-var cart = new LocalStorageObj();
-var users = new LocalStorageObj();

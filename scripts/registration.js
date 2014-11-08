@@ -144,6 +144,8 @@ function addUserToFile(){
 
         window.location = resp.redirect;
 
+
+
     }
 
     xhr.send(params);

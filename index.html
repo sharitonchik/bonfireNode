@@ -1,5 +1,3 @@
-<!DOCTYPE html>
-
 <html lang="en">
 <head>
     <meta charset="utf-8">
@@ -7,13 +5,17 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>Bonfire</title>
 
-    <link href="styles/bootstrap.min.css" rel="stylesheet">
-    <link href="styles/style.css" rel="stylesheet">
-    <link href="styles/media-queries.css" rel="stylesheet">
+    <!-- Bootstrap -->
+    <link href="../styles/bootstrap.min.css" rel="stylesheet">
+    <link href="../styles/style.css" rel="stylesheet">
+    <link href="../styles/media-queries.css" rel="stylesheet">
+
 </head>
+
 <body>
-<script src="scripts/jquery.min.js"></script>
-<script src="scripts/bootstrap.js"></script>
+
+<script src="../scripts/jquery.min.js"></script>
+<script src="../scripts/bootstrap.js"></script>
 
 <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
 <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
@@ -23,7 +25,7 @@
         <div class="row">
             <div class="col-lg-4">
                 <div class="logo">
-                    <a class="logo-img" href="#"><img src="images/logo_2.png" alt="" title=""/></a>
+                    <a class="logo-img" href="/"><img src="../images/logo_2.png" alt="" title=""/></a>
                 </div>
             </div>
         </div>
@@ -34,9 +36,8 @@
                 <div class="nav-main-wrap clearfix">
                     <ul class="nav-main clearfix">
                         <li class="active nav-main-item"><a class="nav-main-link" href="/">Main</a>|
-                        <li class="nav-main-item"><a class="nav-main-link" href="pages/cart.html">Order and
-                            delivery</a>|
-                        <li class="nav-main-item"><a class="nav-main-link" href="#">Contacts</a>
+                        <li class="nav-main-item"><a class="nav-main-link"  href="../pages/order_delivery.html">Order and delivery</a>|
+                        <li class="nav-main-item"><a class="nav-main-link"  href="#">Contacts</a>
                     </ul>
                 </div>
             </div>
@@ -57,18 +58,16 @@
                                 <div class="carousel-caption">
                                     <p>Article headline goes here</p>
                                 </div>
-                                <img class="carousel-image img-responsive" src="images/15_slider.jpg" alt="...">
+                                <img class="carousel-image img-responsive" src="../images/15_slider.jpg" alt="...">
                             </div>
                             <div class="item">
-                                <img class="carousel-image img-responsive" src="images/16_slider.jpg" alt="...">
-
+                                <img class="carousel-image img-responsive" src="../images/16_slider.jpg" alt="...">
                                 <div class="carousel-caption cc-cust">
                                     <p>Article headline goes here</p>
                                 </div>
                             </div>
                             <div class="item">
-                                <img class="carousel-image img-responsive" src="images/17_slider.jpg" alt="...">
-
+                                <img class="carousel-image img-responsive" src="../images/17_slider.jpg" alt="...">
                                 <div class="carousel-caption cc-cust">
                                     <p>Article headline goes here</p>
                                 </div>
@@ -97,10 +96,8 @@
                     <div class="contacts-time-work-wrap">
                         <div class="contacts-time-work">
                             <h6 class="header-main">Operating time</h6>
-
                             <div class="time-work-wrap">
                                 <h2 class="home-time">9:00 - 21:00</h2>
-
                                 <h3 class="p-main">Seven days a week</h3>
                             </div>
                         </div>
@@ -112,7 +109,7 @@
         <div class="row">
             <div class="col-lg-3">
                 <div class="home-item">
-                    <a href="phone" class="links-main">Phone</a>
+                    <a href="../pages/phone.html" class="links-main">Phone</a>
                 </div>
             </div>
             <div class="col-lg-3">
@@ -135,7 +132,11 @@
     </main>
     <div class="footer-push"></div>
 </section>
-<script src="/js/home.js"></script>
+
+<script src="../scripts/localStorageSave.js"></script>
+<script src="../scripts/basic.js"></script>
+<script src="../scripts/homeAccess.js"></script>
+
 <footer class="footer">
     <div class="footer_inner">
         <div class="row">

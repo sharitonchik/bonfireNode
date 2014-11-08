@@ -2,7 +2,7 @@
  * Created by Nastushka on 25.10.2014.
  */
 
-var list = document.getElementById('list_id');
+
 
 document.addEventListener('DOMContentLoaded',showCartItems,false);
 

@@ -32,15 +32,15 @@ app.get('/', function (req, resp) {
     console.log(req.method + ': ' + req.path);
     resp.sendfile(__dirname + "/index.html");
 });
-
+app.get('/cart', getPageRelatedPath);
+app.get('/login', getPageRelatedPath);
+app.get('/registration', getPageRelatedPath);
 app.get('/scripts/*', fileSend);
 app.get('/pages/*', fileSend);
 app.get('/images/*', fileSend);
 app.get('/styles/*', fileSend);
-
 app.get('/getProducts', getProductsDb);
 app.get('/phone', getPageRelatedPath);
-
 
 app.get('/phoneAccess', function (req, resp){
 
@@ -100,7 +100,7 @@ app.get('/phoneAccess', function (req, resp){
     resp.end();
 });
 
-app.get('/access', function (req, resp){
+app.get('/homeAccess', function (req, resp){
 
     var db = fs.readFileSync('db/users.json', {
         encoding: 'utf8'
@@ -143,16 +143,12 @@ app.get('/access', function (req, resp){
         console.log('logged');
     }
 
-
-    //resp.send();
     resp.end();
 
 });
 
 
-app.get('/cart', getPageRelatedPath);
-app.get('/login', getPageRelatedPath);
-app.get('/registration', getPageRelatedPath);
+
 
 app.get('/addProduct', function (req, resp) {
     var db = fs.readFileSync('db/products.json', {

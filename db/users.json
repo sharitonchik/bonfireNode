@@ -43,5 +43,50 @@
         "password": "12345",
         "email": "na96@mail.ru",
         "userToken": "bfacd672-0d42-6c1c-9028-d863b704e97b"
+    },
+    "bebebe": {
+        "password": "12345",
+        "email": "na46@mail.ru",
+        "userToken": "1fa85ad9-d54d-b05f-6b8e-cc9a76a9e61d"
+    },
+    "hanna": {
+        "password": "12345",
+        "email": "na05@mail.ru",
+        "userToken": "b78787fe-650c-89a6-f7ef-6b6aeef00bd2"
+    },
+    "jerry": {
+        "password": "1234",
+        "email": "na96@mail.ru",
+        "userToken": "5a97d3d4-b625-617b-9455-8c4258143216"
+    },
+    "potr8": {
+        "password": "12345",
+        "email": "na6@mail.ru",
+        "userToken": "affab561-2e23-d413-10c1-b032f018068f"
+    },
+    "uiopp": {
+        "password": "12345",
+        "email": "na56@mail.ru",
+        "userToken": "80252f2b-f633-7418-625e-9765258fd8de"
+    },
+    "jujum": {
+        "password": "12345",
+        "email": "na86@mail.ru",
+        "userToken": "67ff351b-9589-24df-e95b-2e79ef029497"
+    },
+    "neneq": {
+        "password": "12345",
+        "email": "na06@mail.ru",
+        "userToken": "d358452b-e7af-a59a-71aa-96d56e55f20b"
+    },
+    "fdsfsd": {
+        "password": "12345",
+        "email": "vdtv@n.ru",
+        "userToken": "a5054252-08cd-5b32-5842-986fee25efb5"
+    },
+    "jkkkjj": {
+        "password": "12345",
+        "email": "na006@mail.ru",
+        "userToken": "6b7962b3-c51b-e728-4efc-e9f583cc162c"
     }
 }

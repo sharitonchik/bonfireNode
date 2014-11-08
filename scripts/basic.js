@@ -1,10 +1,10 @@
 /**
  * Created by Nastushka on 28.10.2014.
  */
-
-var list = document.getElementById('list_id');
-
-//document.addEventListener('DOMContentLoaded',checkUser,false);
+function listReturn(){
+    var list = document.getElementById('list_id');
+    return list;
+}
 
 function newItemReturn(){
     var newItem = document.createElement('li'); //create li
@@ -13,7 +13,7 @@ function newItemReturn(){
 }
 
 function createItemWrap(key){
-
+    var list = listReturn();
     var newItem = newItemReturn();
     newItem.className = 'widgets-list-item'; // assign class
     list.appendChild(newItem); //move li under ul
@@ -89,7 +89,7 @@ function truncate(str, maxlength) {
 }
 
 function clearList(){
-
+    var list = listReturn();
     var childNodes = list.childNodes;
     for (var i=childNodes.length-1;i>=0;i--){
         list.removeChild(childNodes[i]);
@@ -110,5 +110,17 @@ function checkDelBut(key){
     }
 }
 
+function sentUser(){
+    var storageValue = users.get('user');
+
+    for (var key in storageValue){
+        var userLogin = key;
+        var userToken = storageValue[key];
+    }
+
+    var params = 'userLogin=' + encodeURIComponent(userLogin) + '&userToken=' + encodeURIComponent(userToken);
+
+    return params;
+}
 
 
