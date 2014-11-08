@@ -141,6 +141,7 @@ function addUserToFile(){
         var userObj = {};
         userObj[userLogin] = resp.userId;
         users.set('user',userObj,'object');
+
         window.location = resp.redirect;
 
     }

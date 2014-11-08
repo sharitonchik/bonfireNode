@@ -6,8 +6,8 @@
     },
     "AnastasiaGritsuk": {
         "password": "12345",
-        "email": "na86@mail.ru",
-        "userToken": "d0199d06-d7a0-3806-fcb4-0dababb99c89"
+        "email": "na09@mail.ru",
+        "userToken": "b602370a-6879-acd2-c7f0-d3f8377e1027"
     },
     "masha": {
         "password": "12345",
@@ -33,5 +33,15 @@
         "password": "12345",
         "email": "na09@mail.ru",
         "userToken": "a476195f-182f-e0ab-ec8f-293b447d3455"
+    },
+    "tytiy": {
+        "password": "12345",
+        "email": "na18@mail.ru",
+        "userToken": "111a3873-d071-95e3-fd38-5541f02cc827"
+    },
+    "kolia": {
+        "password": "12345",
+        "email": "na96@mail.ru",
+        "userToken": "bfacd672-0d42-6c1c-9028-d863b704e97b"
     }
 }
