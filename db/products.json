@@ -1,88 +1,59 @@
 {
-    "27174afb-1101-cd49-0c66-35e36378077e": {
-        "itemTitle": "apple",
+    "a0df011a-cdb5-24e3-285e-67e77ac81ac0": {
+        "itemTitle": "phone",
         "itemThumbImgUrl": "http://content2.onliner.by/catalog/device/100/dd233397f9290d8574bf0b924398bada.jpg",
-        "shortDescr": "Android, экран 4.7 ",
+        "shortDescr": "cdfasf",
         "price": {
-            "min": "89",
-            "max": "90"
+            "min": "4",
+            "max": "3"
         },
         "techInfo": {
             "thumbs": [
                 {
-                    "thumbURL": "ww",
-                    "fullSizeURL": "ww"
+                    "thumbURL": "vdsa",
+                    "fullSizeURL": "vdas"
                 }
             ],
             "birthday": {
                 "title": "Production date",
-                "value": "2012"
+                "value": "2013"
             },
             "band": {
                 "title": "Standard connection",
-                "value": "band"
+                "value": "vdsv "
+            },
+            "mobile_type": {
+                "title": "Type",
+                "value": "dav"
+            }
+        }
+    },
+    "840877ed-509d-37ed-0247-9d7fe6c1220a": {
+        "itemTitle": "apple",
+        "itemThumbImgUrl": "http://content2.onliner.by/catalog/device/icon/57769fe8842b9796743affbee5a53c06.jpg",
+        "shortDescr": "Android, экран 4.7\" AMOLED (720x1280), процессор 1800 МГц (4 ядр.), память 32 ГБ, аккумулятор 1860 мАч",
+        "price": {
+            "min": "499",
+            "max": "200"
+        },
+        "techInfo": {
+            "thumbs": [
+                {
+                    "thumbURL": "1",
+                    "fullSizeURL": "2"
+                }
+            ],
+            "birthday": {
+                "title": "Production date",
+                "value": "2014"
+            },
+            "band": {
+                "title": "Standard connection",
+                "value": "cd "
             },
             "mobile_type": {
                 "title": "Type",
                 "value": "smartphone"
-            }
-        }
-    },
-    "0cf911b8-c256-8186-73f5-06f2e007d596": {
-        "itemTitle": "rew",
-        "itemThumbImgUrl": "http://content2.onliner.by/catalog/device/100/dd233397f9290d8574bf0b924398bada.jpg",
-        "shortDescr": "adv",
-        "price": {
-            "min": "43",
-            "max": "22"
-        },
-        "techInfo": {
-            "thumbs": [
-                {
-                    "thumbURL": "cAS",
-                    "fullSizeURL": "CVAS"
-                }
-            ],
-            "birthday": {
-                "title": "Production date",
-                "value": "2012"
-            },
-            "band": {
-                "title": "Standard connection",
-                "value": "cad"
-            },
-            "mobile_type": {
-                "title": "Type",
-                "value": "vca"
-            }
-        }
-    },
-    "ab133b2b-87fe-09bd-4188-8f3fd224c394": {
-        "itemTitle": "telephone",
-        "itemThumbImgUrl": "http://content2.onliner.by/catalog/device/icon/57769fe8842b9796743affbee5a53c06.jpg",
-        "shortDescr": "FF",
-        "price": {
-            "min": "34",
-            "max": "33"
-        },
-        "techInfo": {
-            "thumbs": [
-                {
-                    "thumbURL": "c ",
-                    "fullSizeURL": "v czxd"
-                }
-            ],
-            "birthday": {
-                "title": "Production date",
-                "value": "2012"
-            },
-            "band": {
-                "title": "Standard connection",
-                "value": "DCAS"
-            },
-            "mobile_type": {
-                "title": "Type",
-                "value": "C ZX"
             }
         }
     }

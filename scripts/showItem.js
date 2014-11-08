@@ -39,50 +39,64 @@ function sort(event){
 
 
 function phoneItemShow() {
+
+    var storageValue = users.get('user');
+
+    for (var key in storageValue){
+        var userLogin = key;
+        var userToken = storageValue[key];
+    }
+
+    var params = 'userLogin=' + encodeURIComponent(userLogin) + '&userToken=' + encodeURIComponent(userToken);
+
     var xhr = new XMLHttpRequest();
-    xhr.open('GET', '/getProducts', true);
+    xhr.open('GET', '/phoneAccess?' + params, true);
     xhr.onreadystatechange = function () {
         if (xhr.readyState != 4) return;
         var phoneResponse = JSON.parse(xhr.responseText);
 
-        for (var key in phoneResponse){
+        if(phoneResponse.redirect == '/registration'){
+            window.location = phoneResponse.redirect;
+        }
+        else{
+            var respProd = phoneResponse.path;
+            for (var key in respProd){
 
-            var nameDiv = createItemWrap(key);
+                var nameDiv = createItemWrap(key);
 
-            var phoneItem = phoneResponse[key];
+                var phoneItem = respProd[key];
 
-            for (var keyInner in phoneItem){
+                for (var keyInner in phoneItem){
 
-                if (keyInner == 'itemTitle') {
-                    var prName = itemTitleWrap(phoneItem,keyInner);
-                    nameDiv.appendChild(prName);
-                }
-
-                if (keyInner == 'itemThumbImgUrl') {
-                    var prImage = imgWrap(phoneItem,keyInner);
-                    nameDiv.insertBefore(prImage, prName);
-                }
-
-                if (keyInner == 'shortDescr') {
-                    var prDescr = shortDescWtap(phoneItem,keyInner);
-                    nameDiv.appendChild(prDescr);
-                }
-
-                if (keyInner == 'price') {
-                    var newPrice = phoneItem[keyInner];
-                    for (var key1 in newPrice) {
-                        var prPrice = priceWrap(newPrice,key1);
-                        nameDiv.insertBefore(prPrice, prDescr);
-
+                    if (keyInner == 'itemTitle') {
+                        var prName = itemTitleWrap(phoneItem,keyInner);
+                        nameDiv.appendChild(prName);
                     }
 
+                    if (keyInner == 'itemThumbImgUrl') {
+                        var prImage = imgWrap(phoneItem,keyInner);
+                        nameDiv.insertBefore(prImage, prName);
+                    }
+
+                    if (keyInner == 'shortDescr') {
+                        var prDescr = shortDescWtap(phoneItem,keyInner);
+                        nameDiv.appendChild(prDescr);
+                    }
+
+                    if (keyInner == 'price') {
+                        var newPrice = phoneItem[keyInner];
+                        for (var key1 in newPrice) {
+                            var prPrice = priceWrap(newPrice,key1);
+                            nameDiv.insertBefore(prPrice, prDescr);
+
+                        }
+
+                    }
                 }
             }
+            addListenerToAddButton();
             checkDelBut(key);
         }
-
-        addListenerToAddButton();
-
     }
 
     xhr.send(null);

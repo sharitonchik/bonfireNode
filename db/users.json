@@ -4,29 +4,34 @@
         "email": "na68@mail.ru",
         "userToken": "74451f38-a683-e9ad-2faf-823eadb85b59"
     },
-    "slava": {
-        "password": "12345",
-        "email": "na17@mail.ru",
-        "userToken": "6f09ba43-26be-4c8e-7c29-1c310ef8ed13"
-    },
-    "hanna": {
-        "password": "12345",
-        "email": "na96@mail.ru",
-        "userToken": "f078f8be-515b-518c-495c-625192537145"
-    },
-    "totot": {
+    "AnastasiaGritsuk": {
         "password": "12345",
         "email": "na86@mail.ru",
-        "userToken": "d970d932-05f9-dc77-4ed9-48688ea25809"
+        "userToken": "d0199d06-d7a0-3806-fcb4-0dababb99c89"
     },
-    "hahaha": {
+    "masha": {
         "password": "12345",
-        "email": "na26@mail.ru",
-        "userToken": "9e7f50e9-fdf2-5409-ce78-f2ed6a3b47de"
+        "email": "na67@mail.ru",
+        "userToken": "700a72ff-54bb-13a3-c390-f5d2f11fc7d6"
     },
-    "redg7": {
+    "nastya1": {
         "password": "12345",
-        "email": "na06@mail.ru",
-        "userToken": "3fae8efc-a33d-259b-ff2f-758947b139db"
+        "email": "na07@mail.ru",
+        "userToken": "eec3d35d-1c72-70c4-01e3-6063a9313b9a"
+    },
+    "nastya7": {
+        "password": "12345",
+        "email": "na08@mail.ru",
+        "userToken": "650969d3-5671-0d59-4713-32a1b44af919"
+    },
+    "alala": {
+        "password": "12345",
+        "email": "na16@mail.ru",
+        "userToken": "ba239e3e-b7b6-ebf2-d43b-ba6376776d00"
+    },
+    "galya": {
+        "password": "12345",
+        "email": "na09@mail.ru",
+        "userToken": "a476195f-182f-e0ab-ec8f-293b447d3455"
     }
 }

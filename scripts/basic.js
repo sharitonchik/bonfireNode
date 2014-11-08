@@ -67,19 +67,14 @@ function prButAdd(key){
     prButtonAdd.innerHTML = 'Add to cart';
     prButtonAdd.dataset.itemId = key;
 
-
-
     return prButtonAdd;
 }
 
 function prButtonWrap(key){
 
-
     var prButtonWrap = document.createElement('div');
     prButtonWrap.className = 'widgets-list-item-buttons-wrap btn-group clearfix';
-
     var prButtonAdd = prButAdd(key);
-
     prButtonWrap.appendChild(prButtonAdd);
 
     return prButtonWrap;
@@ -105,7 +100,7 @@ function clearList(){
 function checkDelBut(key){
     var c = cart.get('cart');
     var b = document.getElementsByClassName('addToCartButton');
-    for (var i=0;i< c.length;i++){
+    for (var i=0;i<c.length;i++){
         for (var j=0;j< b.length;j++){
             if (b[j].dataset.itemId == c[i]){
                 b[j].disabled = true;
@@ -115,29 +110,5 @@ function checkDelBut(key){
     }
 }
 
-function checkUser(){
 
-    var storageValue = users.get('user');
-
-    for (var key in storageValue){
-        var userLogin = key;
-        var userToken = storageValue[key];
-    }
-
-    var params = 'userLogin=' + encodeURIComponent(userLogin) + '&userToken=' + encodeURIComponent(userToken);
-
-    var xhr = new XMLHttpRequest();
-    xhr.open('GET', '/display?' + params, true);
-    xhr.onreadystatechange = function() {
-        if (xhr.readyState != 4) return;
-        var response = xhr.responseText;
-        response = JSON.parse(response);
-
-        window.location = response.redirect;
-
-    }
-    xhr.send(null);
-
-
-}
 

@@ -2,7 +2,7 @@
  * Created by Nastushka on 06.10.14.
  */
 document.getElementById('submit_id').addEventListener('click',addUserToFile,false);
-document.getElementById('submit_id').addEventListener('click',checkUser,false);
+
 
 function CountLogin(item){
     var item_view = 'login_view'; // var for displaying count of elements
@@ -25,7 +25,7 @@ function CountPass(item){
     var item_view = 'pass_view';
     var item_correct = 'pass_correct';// var for displaying message about error
     var item_login_value = document.getElementById('login_id').value;
-    var item_login_length = document.getElementById('login_id').value.length;
+    var item_login_length = item_login_value.length;
     document.getElementById(item_view).innerHTML = document.getElementById(item).value.length++;
     if (document.getElementById(item).value == item_login_value && item_login_length >= 5) {
         document.getElementById(item_correct).innerHTML = 'password matches to login';
@@ -47,7 +47,7 @@ function CountPass(item){
 
 function CorrectPass(item){
     var item_pass_value = document.getElementById('pass_id').value;// var for displaying message about error
-    var item_pass_length = document.getElementById('pass_id').value.length; // length of the password
+    var item_pass_length = item_pass_value.length; // length of the password
     var item_correct = 'repass_correct';
     if (item_pass_length >= 4){
         if (document.getElementById(item).value == item_pass_value){
@@ -136,11 +136,12 @@ function addUserToFile(){
     xhr.setRequestHeader('Content-Type', 'application/x-www-form-urlencoded');
     xhr.onreadystatechange = function() {
         if (xhr.readyState != 4) return;
-        var userId = xhr.responseText;
+        var resp = JSON.parse(xhr.responseText);
 
         var userObj = {};
-        userObj[userLogin] = userId;
+        userObj[userLogin] = resp.userId;
         users.set('user',userObj,'object');
+        window.location = resp.redirect;
 
     }
 

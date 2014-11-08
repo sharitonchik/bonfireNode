@@ -40,7 +40,9 @@ app.get('/styles/*', fileSend);
 
 app.get('/getProducts', getProductsDb);
 app.get('/phone', getPageRelatedPath);
-app.get('/display', function (req, resp){
+
+
+app.get('/phoneAccess', function (req, resp){
 
     var db = fs.readFileSync('db/users.json', {
         encoding: 'utf8'
@@ -79,8 +81,64 @@ app.get('/display', function (req, resp){
         console.log('not logged');
     }
     else{
-        //resp.writeHead(302,{'Location':'/'});
-        //resp.redirect(200,'/');
+
+        var dbPhone = fs.readFileSync('db/products.json', {
+            encoding: 'utf8'
+        });
+
+        dbPhone = JSON.parse(dbPhone);
+
+        var respObj = {};
+        respObj.path = dbPhone;
+        console.log(respObj.path);
+        respObj.redirect = '/phone';
+
+        resp.send(respObj);
+        console.log('logged');
+    }
+
+    resp.end();
+});
+
+app.get('/access', function (req, resp){
+
+    var db = fs.readFileSync('db/users.json', {
+        encoding: 'utf8'
+    });
+
+    db = JSON.parse(db);
+
+    var params = url.parse(req.url, true).query;
+    console.log('req.params', params);
+
+    var username = params['userLogin'];
+    console.log(username)
+    var token = params['userToken'];
+    console.log(token);
+
+    var count = 0;
+
+    for (var key in db){
+        console.log('db=',key);
+        if (key == username){
+            console.log('0=',key,username);
+            count++;
+            if (db[key] == token){
+                console.log('1');
+                return;
+            }
+        }
+        else{
+            console.log('2=',key,username);
+            console.log('count=',count);
+        }
+    }
+
+    if (count == 0){
+        resp.send({redirect:'/registration'});
+        console.log('not logged');
+    }
+    else{
         resp.send({redirect:'/'});
         console.log('logged');
     }
@@ -182,8 +240,12 @@ app.post('/auth', function (req, resp) {
         }
     });
 
+    var resAuth = {};
+    resAuth.userId = uuid;
+    resAuth.redirect = '/';
 
-    resp.send(uuid);
+
+    resp.send(resAuth);
     resp.end();
 });
 

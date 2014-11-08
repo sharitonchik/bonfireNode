@@ -183,9 +183,12 @@ LocalStorageObj.prototype.showLenght = function(key){
 
             return storageValue.length;
         }
+        else{
+            return 0;
+        }
     }
     catch (e){
-        return;
+        return 0;
     }
 }
 
