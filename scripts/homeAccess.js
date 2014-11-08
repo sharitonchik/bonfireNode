@@ -3,6 +3,8 @@
  */
 
 document.addEventListener('DOMContentLoaded',homeAccess,false);
+document.addEventListener('DOMContentLoaded',loggedUser,false);
+
 
 function homeAccess(){
     var params = sentUser();

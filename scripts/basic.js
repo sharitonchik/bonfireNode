@@ -123,4 +123,16 @@ function sentUser(){
     return params;
 }
 
+function loggedUser(){
+    var storageValue = users.get('user');
+
+    for (var key in storageValue){
+        var userLogin = key;
+    }
+
+    var userLink = document.getElementById('loggedUser');
+    userLink.innerHTML = userLogin;
+
+}
+
 

@@ -28,21 +28,7 @@ function getProductsDb(req, resp) {
     resp.sendfile(__dirname + productsPath);
 }
 
-app.get('/', function (req, resp) {
-    console.log(req.method + ': ' + req.path);
-    resp.sendfile(__dirname + "/index.html");
-});
-app.get('/cart', getPageRelatedPath);
-app.get('/login', getPageRelatedPath);
-app.get('/registration', getPageRelatedPath);
-app.get('/scripts/*', fileSend);
-app.get('/pages/*', fileSend);
-app.get('/images/*', fileSend);
-app.get('/styles/*', fileSend);
-app.get('/getProducts', getProductsDb);
-app.get('/phone', getPageRelatedPath);
-
-app.get('/phoneAccess', function (req, resp){
+function pagesAccess(req, resp, value){
 
     var db = fs.readFileSync('db/users.json', {
         encoding: 'utf8'
@@ -91,14 +77,40 @@ app.get('/phoneAccess', function (req, resp){
         var respObj = {};
         respObj.path = dbPhone;
         console.log(respObj.path);
-        respObj.redirect = '/phone';
+        respObj.redirect = value;
 
         resp.send(respObj);
         console.log('logged');
     }
 
     resp.end();
+}
+
+app.get('/', function (req, resp) {
+    console.log(req.method + ': ' + req.path);
+    resp.sendfile(__dirname + "/index.html");
 });
+app.get('/cart', getPageRelatedPath);
+app.get('/login', getPageRelatedPath);
+app.get('/registration', getPageRelatedPath);
+app.get('/scripts/*', fileSend);
+app.get('/pages/*', fileSend);
+app.get('/images/*', fileSend);
+app.get('/styles/*', fileSend);
+app.get('/getProducts', getProductsDb);
+app.get('/phone', getPageRelatedPath);
+
+app.get('/phoneAccess', function (req, resp){
+
+    pagesAccess(req, resp, '/phone');
+
+});
+
+app.get('/cartAccess', function (req, resp){
+
+    pagesAccess(req, resp,'/cart');
+});
+
 
 app.get('/homeAccess', function (req, resp){
 

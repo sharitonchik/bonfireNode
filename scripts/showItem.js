@@ -1,7 +1,7 @@
 
 document.getElementById('find').addEventListener('click',sort,false);
 document.addEventListener('DOMContentLoaded',phoneItemShow,false);
-
+document.addEventListener('DOMContentLoaded',loggedUser,false);
 
 
 function sort(event){
@@ -46,6 +46,7 @@ function phoneItemShow() {
     xhr.open('GET', '/phoneAccess?' + params, true);
     xhr.onreadystatechange = function () {
         if (xhr.readyState != 4) return;
+
         var phoneResponse = JSON.parse(xhr.responseText);
 
         if(phoneResponse.redirect == '/registration'){
