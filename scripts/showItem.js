@@ -1,7 +1,8 @@
 
 document.getElementById('find').addEventListener('click',sort,false);
 document.addEventListener('DOMContentLoaded',phoneItemShow,false);
-document.addEventListener('DOMContentLoaded',loggedUser,false);
+//document.addEventListener('DOMContentLoaded',logOut,false);
+
 
 
 function sort(event){

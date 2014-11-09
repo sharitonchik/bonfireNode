@@ -133,6 +133,20 @@ function loggedUser(){
     var userLink = document.getElementById('loggedUser');
     userLink.innerHTML = userLogin;
 
+    logOut();
+
+}
+
+function outUser(){
+    users.remove('user','','string');
+}
+
+function logOut(){
+
+    var logOutLink = document.getElementById('logOut');
+    logOutLink.addEventListener('click',outUser,false);
+
+    return logOutLink;
 }
 
 

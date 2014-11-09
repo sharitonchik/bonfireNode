@@ -111,7 +111,6 @@ app.get('/cartAccess', function (req, resp){
     pagesAccess(req, resp,'/cart');
 });
 
-
 app.get('/homeAccess', function (req, resp){
 
     var db = fs.readFileSync('db/users.json', {
@@ -159,9 +158,6 @@ app.get('/homeAccess', function (req, resp){
 
 });
 
-
-
-
 app.get('/addProduct', function (req, resp) {
     var db = fs.readFileSync('db/products.json', {
         encoding: 'utf8'
@@ -203,8 +199,6 @@ app.get('/addProduct', function (req, resp) {
     resp.send(params);
     resp.end();
 });
-
-
 
 app.post('/auth', function (req, resp) {
     console.log('post');
@@ -254,6 +248,74 @@ app.post('/auth', function (req, resp) {
 
 
     resp.send(resAuth);
+    resp.end();
+});
+
+app.post('/log', function (req, resp) {
+    console.log('post');
+    var dbLogin = fs.readFileSync('db/users.json', {
+        encoding: 'utf8'
+    });
+
+    console.log('dbLogin', dbLogin);
+    dbLogin = JSON.parse(dbLogin);
+
+    var body = req.body;
+    console.log('body', body);
+
+    var userInfo =  JSON.parse(body['userInfo']);
+
+    var username = userInfo.username;
+    var password = userInfo.password;
+
+    var guid = (function() {
+        function s4() {
+            return Math.floor((1 + Math.random()) * 0x10000)
+                .toString(16)
+                .substring(1);
+        }
+        return function() {
+            return s4() + s4() + '-' + s4() + '-' + s4() + '-' +
+                s4() + '-' + s4() + s4() + s4();
+        };
+    })();
+
+    var uuid = guid();
+
+    for(var key in dbLogin){
+        if(username == key){
+            console.log(username,key);
+            var usOnj = dbLogin[key];
+            if(password = usOnj.password){
+                console.log(password,usOnj.password);
+
+                usOnj.userToken = uuid;
+                console.log(usOnj.userToken);
+
+                fs.writeFile('db/users.json', JSON.stringify(dbLogin, null, 4), function (err) {
+                    if (err) {
+                        console.log('err add', err);
+                    } else {
+                        console.log('User saved');
+                    }
+                });
+
+                var resAuth = {};
+                resAuth.userId = uuid;
+                resAuth.redirect = '/';
+
+                resp.send(resAuth);
+                return;
+            }
+            else{
+                resp.send('Data are invalid');
+            }
+        }
+        else{
+            resp.send('Data are invalid');
+        }
+    }
+
     resp.end();
 });
 

@@ -28,8 +28,7 @@
         </div>
     </header>
     <main class="main">
-        <form class="registr-form clearfix" modelAttribute="loginAttribute" action="/j_spring_security_check"
-              method="POST" role="form">
+        <form class="registr-form clearfix">
             <div class="registr-item clearfix">
                 <label for="inputUsername" class="col-lg-5 registr-label">Username</label>
 
@@ -49,13 +48,18 @@
 
             <div class="registr-item">
                 <div class="col-lg-offset-5 col-lg-1">
-                    <button type="submit" class="button btn-sign">Sign in</button>
+                    <button type="submit" id="singIn_id" class="button btn-sign">Sign in</button>
                 </div>
             </div>
         </form>
     </main>
     <div class="footer-push"></div>
 </section>
+
+<script src="../scripts/localStorageSave.js"></script>
+<script src="../scripts/basic.js"></script>
+<script src="../scripts/userLogin.js"></script>
+
 <footer class="footer">
     <div class="footer_inner">
         <div class="row">
