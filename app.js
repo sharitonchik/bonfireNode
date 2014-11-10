@@ -123,25 +123,25 @@ app.get('/homeAccess', function (req, resp){
     console.log('req.params', params);
 
     var username = params['userLogin'];
-    console.log(username)
+    //console.log(username)
     var token = params['userToken'];
-    console.log(token);
+    //console.log(token);
 
     var count = 0;
 
     for (var key in db){
         console.log('db=',key);
         if (key == username){
-            console.log('0=',key,username);
+            //console.log('0=',key,username);
             count++;
             if (db[key] == token){
-                console.log('1');
+                //console.log('1');
                 return;
             }
         }
         else{
-            console.log('2=',key,username);
-            console.log('count=',count);
+            //console.log('2=',key,username);
+            //console.log('count=',count);
         }
     }
 
@@ -268,6 +268,8 @@ app.post('/log', function (req, resp) {
     var username = userInfo.username;
     var password = userInfo.password;
 
+    console.log(password);
+    console.log(username);
     var guid = (function() {
         function s4() {
             return Math.floor((1 + Math.random()) * 0x10000)
@@ -286,7 +288,8 @@ app.post('/log', function (req, resp) {
         if(username == key){
             console.log(username,key);
             var usOnj = dbLogin[key];
-            if(password = usOnj.password){
+
+            if(password == usOnj.password){
                 console.log(password,usOnj.password);
 
                 usOnj.userToken = uuid;
@@ -307,12 +310,49 @@ app.post('/log', function (req, resp) {
                 resp.send(resAuth);
                 return;
             }
-            else{
-                resp.send('Data are invalid');
-            }
+
         }
-        else{
-            resp.send('Data are invalid');
+    }
+
+    resp.end();
+});
+
+app.post('/logOut', function (req, resp) {
+    console.log('post');
+    var dbLogin = fs.readFileSync('db/users.json', {
+        encoding: 'utf8'
+    });
+
+    dbLogin = JSON.parse(dbLogin);
+
+    var body = req.body;
+    console.log('body', body);
+
+    var username = body['userLogin'];
+    console.log('my',username);
+
+    for(var key in dbLogin){
+        if(username == key){
+            console.log(username,key);
+
+            var usOnj = dbLogin[key];
+
+            delete usOnj.userToken;
+
+            fs.writeFile('db/users.json', JSON.stringify(dbLogin, null, 4), function (err) {
+                if (err) {
+                    console.log('err add', err);
+                } else {
+                    console.log('User saved');
+                }
+            });
+
+            var resAuth = {};
+            //resAuth.userToken = null;
+            resAuth.redirect = '/login';
+
+            resp.send(resAuth);
+            return;
         }
     }
 

@@ -138,7 +138,35 @@ function loggedUser(){
 }
 
 function outUser(){
-    users.remove('user','','string');
+
+
+        var xhr = new XMLHttpRequest();
+        var params = sentUser();
+        xhr.open('POST','/logOut',true);
+        xhr.setRequestHeader('Content-Type', 'application/x-www-form-urlencoded');
+        xhr.onreadystatechange = function() {
+            if (xhr.readyState != 4) return;
+            try{
+                var resp = JSON.parse(xhr.responseText);
+
+                if(resp.redirect){
+
+                    users.remove('user','','string');
+
+                    window.location = resp.redirect;
+                }
+
+            }
+            catch(e){
+                alert('data are invalid');
+            }
+
+        }
+
+        xhr.send(params);
+
+
+
 }
 
 function logOut(){

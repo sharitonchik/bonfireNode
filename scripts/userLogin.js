@@ -45,5 +45,4 @@ function checkUserInFile(){
 
     xhr.send(params);
 
-
 }
