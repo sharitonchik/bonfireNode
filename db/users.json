@@ -1,22 +1,30 @@
 {
     "ahrytsuk": {
         "password": "12345",
-        "email": "na68@mail.ru",
-        "userToken": "2f110038-1b96-c686-1bb7-a28e6fafb5cb"
+        "email": "na68@mail.ru"
     },
     "dimaa": {
         "password": "12345",
-        "email": "na06@mail.ru",
-        "userToken": "41fee125-43d2-6098-f3e8-8f155110f171"
+        "email": "na06@mail.ru"
     },
     "DenisMishkov": {
         "password": "12345",
-        "email": "na66@mail.ru",
-        "userToken": "d501e163-5d16-5282-e3d5-882eafe60a73"
+        "email": "na66@mail.ru"
     },
     "katya": {
         "password": "12345",
-        "email": "na08@mail.ru",
-        "userToken": "d5773f9e-87c9-58d5-3682-f7e6430fd285"
+        "email": "na08@mail.ru"
+    },
+    "AngolaB": {
+        "password": "nastya",
+        "email": "natikana_@mail.ru"
+    },
+    "sasha": {
+        "password": "12345",
+        "email": "na06@mail.ru"
+    },
+    "GalinaGritsuk": {
+        "password": "12345",
+        "email": "na96@mail.ru"
     }
 }

@@ -158,6 +158,10 @@ app.get('/homeAccess', function (req, resp){
 
 });
 
+app.get('/loginAccess', function (req, resp){
+    pagesAccess(req, resp,'/');
+});
+
 app.get('/addProduct', function (req, resp) {
     var db = fs.readFileSync('db/products.json', {
         encoding: 'utf8'

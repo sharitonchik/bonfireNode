@@ -2,7 +2,10 @@
  * Created by Nastushka on 09.11.2014.
  */
 
+document.addEventListener('DOMContentLoaded',loginAccess,false);
+
 document.getElementById('singIn_id').addEventListener('click',checkUserInFile,false);
+
 
 function checkUserInFile(){
 
@@ -33,9 +36,7 @@ function checkUserInFile(){
 
                 window.location = resp.redirect;
             }
-            else{
-                alert(resp);
-            }
+
         }
         catch(e){
             alert('data are invalid');
@@ -45,4 +46,24 @@ function checkUserInFile(){
 
     xhr.send(params);
 
+}
+
+function loginAccess(){
+
+    var params = sentUser();
+
+    var xhr = new XMLHttpRequest();
+    xhr.open('GET', '/loginAccess?' + params, true);
+    xhr.onreadystatechange = function () {
+        if (xhr.readyState != 4) return;
+
+        var phoneResponse = JSON.parse(xhr.responseText);
+
+        if(phoneResponse.redirect == '/'){
+            window.location = phoneResponse.redirect;
+        }
+
+    }
+
+    xhr.send(null);
 }
