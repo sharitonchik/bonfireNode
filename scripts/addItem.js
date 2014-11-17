@@ -26,7 +26,7 @@ function saveChanges(){
         this.max = max;
     }
 
-    var priceObj = new priceObj(priceMaxValue,priceMinValue);
+    var priceObj = new priceObj(priceMinValue,priceMaxValue);
 
     var birthday = document.getElementById('birthday');
     var birthdayValue = birthday.value;

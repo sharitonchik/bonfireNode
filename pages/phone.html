@@ -95,30 +95,39 @@
                         <span>!</span>
                     </div>
                     <div class="category-wrap">
-                        <label>Memory</label><input class="input-common input-datail" type="text">
+                        <label>Production date</label><input id="pr-date" class="input-common input-datail" type="text">
                     </div>
                     <div class="category-wrap">
-                        <label>Rating</label><input class="input-common input-datail" type="text">
+
+                        <label>OS</label>
+
+                        <select id="pr-os" onchange="run()">
+                            <option value="None">Select..</option>
+                            <option value="Android">Android</option>
+                            <option value="Apple iOS">Apple iOS</option>
+                        </select>
+
                     </div>
                     <div class="category-wrap">
-                        <div class="checkbox-item">
-                            <label class="checkbox-label">
-                                <input class="checkbox-input" type="checkbox" value="">Lantern
-                            </label>
-                        </div>
-                        <div class="checkbox-item">
-                            <label class="checkbox-label">
-                                <input class="checkbox-input" type="checkbox" value="">NFC
-                            </label>
-                        </div>
-                        <div class="checkbox-item">
-                            <label class="checkbox-label">
-                                <input class="checkbox-input" type="checkbox" value="">Touch screen
-                            </label>
-                        </div>
-                        <button id='find'>Find</button>
+                        <label>Type</label>
+
+                        <select id="pr-type" onchange="runType()">
+                            <option value="None">Select..</option>
+                            <option value="Smartphone">Smartphone</option>
+                            <option value="Telephone">Telephone</option>
+                        </select>
+
+                    </div>
+                    <div class="category-wrap">
+                        <label>Amount of RAM</label><input id="pr-memory" class="input-common input-datail" type="text">
+                    </div>
+                    <div class="category-wrap">
+                        <label>Talking time</label><input id="pr-talk-time" class="input-common input-datail" type="text">
+                    </div>
+
+                    <button id='find'>Find</button>
                         <!--class="button btn-sign"-->
-                    </div>
+
                 </div>
             </div>
         </div>
@@ -182,7 +191,7 @@
                     <div class="row row-popup">
                         <!--band-->
                         <div class="registr-item clearfix">
-                            <label for="band" class="col-lg-5 registr-label">Band</label>
+                            <label for="band" class="col-lg-5 registr-label">OS</label>
                             <div class="col-lg-6 col-md-5 col-sm-5 col-xs-5">
                                 <input type="text" class="input-common" id="band" value="" name="band" placeholder="band" required>
                             </div>
@@ -200,7 +209,7 @@
                     <div class="row row-popup">
                         <!--mobile_type-->
                         <div class="registr-item clearfix">
-                            <label for="mobile_type" class="col-lg-5 registr-label">thumbURL</label>
+                            <label for="mobile_type" class="col-lg-5 registr-label">Amount of RAM</label>
                             <div class="col-lg-6 col-md-5 col-sm-5 col-xs-5">
                                 <input type="text" class="input-common" id="thumbURL" value="" name="thumbURL" placeholder="" required>
                             </div>
@@ -209,7 +218,7 @@
                     <div class="row row-popup">
                         <!--mobile_type-->
                         <div class="registr-item clearfix">
-                            <label for="mobile_type" class="col-lg-5 registr-label">fullSizeURL</label>
+                            <label for="mobile_type" class="col-lg-5 registr-label">Talk time</label>
                             <div class="col-lg-6 col-md-5 col-sm-5 col-xs-5">
                                 <input type="text" class="input-common" id="fullSizeURL" value="" name="fullSizeURL" placeholder="" required>
                             </div>

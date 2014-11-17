@@ -16,8 +16,9 @@
         "email": "na08@mail.ru"
     },
     "AngolaB": {
-        "password": "nastya",
-        "email": "natikana_@mail.ru"
+        "password": "12345",
+        "email": "na006@mail.ru",
+        "userToken": "2d4fc071-353b-1d68-2ef0-3d7516fbb0cb"
     },
     "sasha": {
         "password": "12345",

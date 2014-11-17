@@ -99,7 +99,7 @@ app.get('/images/*', fileSend);
 app.get('/styles/*', fileSend);
 app.get('/getProducts', getProductsDb);
 app.get('/phone', getPageRelatedPath);
-
+app.get('/productReview', getPageRelatedPath);
 app.get('/phoneAccess', function (req, resp){
 
     pagesAccess(req, resp, '/phone');

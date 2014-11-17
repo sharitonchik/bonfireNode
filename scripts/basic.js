@@ -40,6 +40,7 @@ function itemTitleWrap(phoneItem,keyInner){
     var prName = document.createElement('a');
     prName.className = 'links-main';
     prName.innerHTML = phoneItem[keyInner];
+    prName.href = '/productReview';
 
     return prName;
 }
@@ -139,33 +140,30 @@ function loggedUser(){
 
 function outUser(){
 
+    var xhr = new XMLHttpRequest();
+    var params = sentUser();
+    xhr.open('POST','/logOut',true);
+    xhr.setRequestHeader('Content-Type', 'application/x-www-form-urlencoded');
+    xhr.onreadystatechange = function() {
+        if (xhr.readyState != 4) return;
+        try{
+            var resp = JSON.parse(xhr.responseText);
 
-        var xhr = new XMLHttpRequest();
-        var params = sentUser();
-        xhr.open('POST','/logOut',true);
-        xhr.setRequestHeader('Content-Type', 'application/x-www-form-urlencoded');
-        xhr.onreadystatechange = function() {
-            if (xhr.readyState != 4) return;
-            try{
-                var resp = JSON.parse(xhr.responseText);
+            if(resp.redirect){
 
-                if(resp.redirect){
+                users.remove('user','','string');
 
-                    users.remove('user','','string');
-
-                    window.location = resp.redirect;
-                }
-
-            }
-            catch(e){
-                alert('data are invalid');
+                window.location = resp.redirect;
             }
 
         }
+        catch(e){
+            alert('data are invalid');
+        }
 
-        xhr.send(params);
+    }
 
-
+    xhr.send(params);
 
 }
 

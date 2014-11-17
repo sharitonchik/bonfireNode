@@ -56,5 +56,34 @@
                 "value": "smartphone"
             }
         }
+    },
+    "68b516cb-0d1d-0958-f600-389a6cf12e19": {
+        "itemTitle": "Huawei Ascend P7",
+        "itemThumbImgUrl": "http://content2.onliner.by/catalog/device/icon/83d670da7ab481fe7d0d33586ee34c7b.jpg",
+        "shortDescr": "Android, экран 5\" IPS (1080x1920), процессор 1800 МГц (4 ядр.), память 16 ГБ, аккумулятор 2500 мАч",
+        "price": {
+            "min": "375",
+            "max": "495"
+        },
+        "techInfo": {
+            "thumbs": [
+                {
+                    "thumbURL": "2",
+                    "fullSizeURL": "6"
+                }
+            ],
+            "birthday": {
+                "title": "Production date",
+                "value": "2014"
+            },
+            "band": {
+                "title": "Standard connection",
+                "value": "Android"
+            },
+            "mobile_type": {
+                "title": "Type",
+                "value": "Smartphone"
+            }
+        }
     }
 }
