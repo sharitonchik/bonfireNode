@@ -9,6 +9,8 @@
     <link href="../styles/bootstrap.min.css" rel="stylesheet">
     <link href="../styles/style.css" rel="stylesheet">
     <link href="../styles/media-queries.css" rel="stylesheet">
+    <script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.3.14/angular.min.js"></script>
+
 </head>
 <body>
 
@@ -23,7 +25,7 @@
 
 </script>
 
-<section class="container-fluid">
+<section class="container-fluid" ng-app="phoneInstance" ng-controller="phoneInstanceCtrl">
     <header class="header">
 
         <div class="row">
@@ -45,7 +47,7 @@
                         <li class="nav-main-item"><a class="nav-main-link" href="../pages/order_delivery.html">Order and
                             delivery</a>|
                         <li class="nav-main-item"><a class="nav-main-link" href="#companies">Contacts</a>
-                        <li class="nav-main-item">Logged as:<a class="nav-main-link" id="loggedUser" href="#"></a>
+                        <li class="nav-main-item">Logged as:<a class="nav-main-link" ng-model = "userLink" id="loggedUser" href="#">{{userLink()}}</a>
                         <li class="nav-main-item"><a class="nav-main-link" id="logOut" href="#">Log out</a>
 
                     </ul>
@@ -240,6 +242,7 @@
 <script src="../scripts/showItem.js"></script>
 <script src="../scripts/addItem.js"></script>
 <script src="../scripts/cartOperations.js"></script>
+<script src="../scripts/controllers/loggedUserController.js"></script>
 
 <footer class="footer">
     <div class="footer_inner">

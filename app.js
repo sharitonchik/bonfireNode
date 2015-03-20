@@ -20,6 +20,7 @@ function getPageRelatedPath(req, resp) {
     console.log(req.method + ': ' + req.path);
     resp.sendfile(__dirname + '/pages' + req.path + '.html');
 
+
 }
 
 function getProductsDb(req, resp) {
@@ -91,7 +92,9 @@ app.get('/', function (req, resp) {
     resp.sendfile(__dirname + "/index.html");
 });
 app.get('/cart', getPageRelatedPath);
-app.get('/login', getPageRelatedPath);
+app.get('/login', getPageRelatedPath, function(){
+    console.log("test");
+});
 app.get('/registration', getPageRelatedPath);
 app.get('/scripts/*', fileSend);
 app.get('/pages/*', fileSend);

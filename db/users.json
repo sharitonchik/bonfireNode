@@ -5,7 +5,8 @@
     },
     "dimaa": {
         "password": "12345",
-        "email": "na06@mail.ru"
+        "email": "na06@mail.ru",
+        "userToken": "a3341817-fcc6-b05d-d5f8-642c18a90b95"
     },
     "DenisMishkov": {
         "password": "12345",
@@ -17,8 +18,7 @@
     },
     "AngolaB": {
         "password": "12345",
-        "email": "na006@mail.ru",
-        "userToken": "2d4fc071-353b-1d68-2ef0-3d7516fbb0cb"
+        "email": "na006@mail.ru"
     },
     "sasha": {
         "password": "12345",
@@ -27,5 +27,13 @@
     "GalinaGritsuk": {
         "password": "12345",
         "email": "na96@mail.ru"
+    },
+    "mamamia": {
+        "password": "1234",
+        "email": "nat@gmail.com"
+    },
+    "katerina": {
+        "password": "12345",
+        "email": "nat@gmail.com2"
     }
 }

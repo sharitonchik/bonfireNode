@@ -19,9 +19,9 @@ function homeAccess(){
         if(phoneResponse.redirect == '/registration'){
             window.location = phoneResponse.redirect;
         }
-
-
     }
 
     xhr.send(null);
+
+
 }
